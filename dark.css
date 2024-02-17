@@ -76,6 +76,14 @@ body {
   height: 100%;
 }
 
+div {
+  display: grid !important;
+}
+
+div > * {
+  display: grid !important;
+}
+
 body *:not(script) {
   display: flex;
 }
@@ -84,14 +92,6 @@ h1 {
   font-size: 32px;
   text-align: center;
   display: initial;
-}
-
-div {
-  display: grid;
-}
-
-div > * {
-  display: grid;
 }
 
 button, select, option {
