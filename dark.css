@@ -76,14 +76,6 @@ body {
   height: 100%;
 }
 
-div {
-  display: grid !important;
-}
-
-div > * {
-  display: grid !important;
-}
-
 body *:not(script) {
   display: flex;
 }
