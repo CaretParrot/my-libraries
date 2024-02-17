@@ -80,7 +80,7 @@ body {
 }
 
 body *:not(script) {
-  display: inline-grid;
+  display: flex;
 }
 
 h1 {
