@@ -92,6 +92,10 @@ div {
   display: grid;
 }
 
+div > * {
+  display: grid;
+}
+
 button, select, option {
   cursor: pointer;
   text-align: center;
