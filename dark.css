@@ -89,6 +89,10 @@ h1 {
   display: initial;
 }
 
+div {
+  display: grid;
+}
+
 button, select, option {
   cursor: pointer;
   text-align: center;
