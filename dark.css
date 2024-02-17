@@ -152,43 +152,4 @@ table {
 .grid > * {
   margin: 0;
 }
-
-@media (hover: none) {
-  * {
-    border-radius: 1vmax;
-    margin: 1vmax;
-    padding: 2vmax;
-    font-size: 4vmin;
-  }
-  
-  h1 {
-    font-size: 96px;
-  }
-  
-  button:hover, select:hover {
-    background-color: initial;
-  }
-
-  button:active, select:active {
-    background-color: initial;
-  }
-  
-  .full-width {
-    width: calc(100% - 2vmax);
-  }
-
-  .full-height {
-    height: calc(100% - 2vmax);
-  }
-
-  .extra-bottom-margin {
-    margin-bottom: 2vmax;
-  }
-
-  .grid {
-    display: grid;
-    gap: 2vmax;
-    background: none;
-    padding: 0;
-  }
 }
