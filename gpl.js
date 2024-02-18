@@ -9,8 +9,6 @@ let idTree;
 let classTree;
 
 function setupTree() {
-  p = 0;
-  o = 0;
   idTree = {};
   classTree = {};
   
@@ -23,8 +21,8 @@ function setupTree() {
   }
 
   for (o = 0; o < allElements.length; o++) {
-    if (allElements[o].class) {
-      classTree[`${allElements[o].class}`] = allElements[o];
+    if (allElements[o].className) {
+      classTree[`${allElements[o].className}`] = allElements[o];
     }
   }
 }
