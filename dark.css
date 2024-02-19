@@ -1,166 +1,170 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap')
-
-::-webkit-scrollbar {
-  display: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-  --red-50: hsl(0, 50%, 50%);
-  --orange-50: hsl(30, 50%, 50%);
-  --yellow-50: hsl(60, 50%, 50%);
-  --lime-50: hsl(90, 50%, 50%);
-  --green-50: hsl(120, 50%, 50%);
-  --seafoam-50: hsl(150, 50%, 50%);
-  --teal-50: hsl(180, 50%, 50%);
-  --sky-50: hsl(210, 50%, 50%);
-  --blue-50: hsl(240, 50%, 50%);
-  --purple-50: hsl(270, 50%, 50%);
-  --magenta-50: hsl(300, 50%, 50%);
-  --pink-50: hsl(330, 50%, 50%);
-  --red-60: hsl(0, 60%, 60%);
-  --orange-60: hsl(30, 60%, 60%);
-  --yellow-60: hsl(60, 60%, 60%);
-  --lime-60: hsl(90, 60%, 60%);
-  --green-60: hsl(120, 60%, 60%);
-  --seafoam-60: hsl(150, 60%, 60%);
-  --teal-60: hsl(180, 60%, 60%);
-  --sky-60: hsl(210, 60%, 60%);
-  --blue-60: hsl(240, 60%, 60%);
-  --purple-60: hsl(270, 60%, 60%);
-  --magenta-60: hsl(300, 60%, 60%);
-  --pink-60: hsl(330, 60%, 60%);
-  --red-70: hsl(0, 70%, 70%);
-  --orange-70: hsl(30, 70%, 70%);
-  --yellow-70: hsl(60, 70%, 70%);
-  --lime-70: hsl(90, 70%, 70%);
-  --green-70: hsl(120, 70%, 70%);
-  --seafoam-70: hsl(150, 70%, 70%);
-  --teal-70: hsl(180, 70%, 70%);
-  --sky-70: hsl(210, 70%, 70%);
-  --blue-70: hsl(240, 70%, 70%);
-  --purple-70: hsl(270, 70%, 70%);
-  --magenta-70: hsl(300, 70%, 70%);
-  --pink-70: hsl(330, 70%, 70%);
-  --red-80: hsl(0, 80%, 80%);
-  --orange-80: hsl(30, 80%, 80%);
-  --yellow-80: hsl(60, 80%, 80%);
-  --lime-80: hsl(90, 80%, 80%);
-  --green-80: hsl(120, 80%, 80%);
-  --seafoam-80: hsl(150, 80%, 80%);
-  --teal-80: hsl(180, 80%, 80%);
-  --sky-80: hsl(210, 80%, 80%);
-  --blue-80: hsl(240, 80%, 80%);
-  --purple-80: hsl(270, 80%, 80%);
-  --magenta-80: hsl(300, 80%, 80%);
-  --pink-80: hsl(330, 80%, 80%);
-  --xdark-gray: hsl(0, 0%, 12.5%);
-  --dark-gray: hsl(0, 0%, 25%);
+    --red-50: hsl(0, 50%, 50%);
+    --orange-50: hsl(30, 50%, 50%);
+    --yellow-50: hsl(60, 50%, 50%);
+    --lime-50: hsl(90, 50%, 50%);
+    --green-50: hsl(120, 50%, 50%);
+    --seafoam-50: hsl(150, 50%, 50%);
+    --teal-50: hsl(180, 50%, 50%);
+    --sky-50: hsl(210, 50%, 50%);
+    --blue-50: hsl(240, 50%, 50%);
+    --purple-50: hsl(270, 50%, 50%);
+    --magenta-50: hsl(300, 50%, 50%);
+    --pink-50: hsl(330, 50%, 50%);
+    --red-60: hsl(0, 60%, 60%);
+    --orange-60: hsl(30, 60%, 60%);
+    --yellow-60: hsl(60, 60%, 60%);
+    --lime-60: hsl(90, 60%, 60%);
+    --green-60: hsl(120, 60%, 60%);
+    --seafoam-60: hsl(150, 60%, 60%);
+    --teal-60: hsl(180, 60%, 60%);
+    --sky-60: hsl(210, 60%, 60%);
+    --blue-60: hsl(240, 60%, 60%);
+    --purple-60: hsl(270, 60%, 60%);
+    --magenta-60: hsl(300, 60%, 60%);
+    --pink-60: hsl(330, 60%, 60%);
+    --red-70: hsl(0, 70%, 70%);
+    --orange-70: hsl(30, 70%, 70%);
+    --yellow-70: hsl(60, 70%, 70%);
+    --lime-70: hsl(90, 70%, 70%);
+    --green-70: hsl(120, 70%, 70%);
+    --seafoam-70: hsl(150, 70%, 70%);
+    --teal-70: hsl(180, 70%, 70%);
+    --sky-70: hsl(210, 70%, 70%);
+    --blue-70: hsl(240, 70%, 70%);
+    --purple-70: hsl(270, 70%, 70%);
+    --magenta-70: hsl(300, 70%, 70%);
+    --pink-70: hsl(330, 70%, 70%);
+    --red-80: hsl(0, 80%, 80%);
+    --orange-80: hsl(30, 80%, 80%);
+    --yellow-80: hsl(60, 80%, 80%);
+    --lime-80: hsl(90, 80%, 80%);
+    --green-80: hsl(120, 80%, 80%);
+    --seafoam-80: hsl(150, 80%, 80%);
+    --teal-80: hsl(180, 80%, 80%);
+    --sky-80: hsl(210, 80%, 80%);
+    --blue-80: hsl(240, 80%, 80%);
+    --purple-80: hsl(270, 80%, 80%);
+    --magenta-80: hsl(300, 80%, 80%);
+    --pink-80: hsl(330, 80%, 80%);
+    --xdark-gray: hsl(0, 0%, 12.5%);
+    --dark-gray: hsl(0, 0%, 25%);
 }
 
 * {
-  color: White;
-  background-color: var(--xdark-gray);
-  font-family: "Lato", serif;
-  border-radius: 1vmin;
-  border: none;
-  margin: 1vmin;
-  padding: 2vmin;
-  font-size: 2vmin;
-  outline: none;
-  box-sizing: border-box;
-  transition: 0.2s;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  margin-bottom: 2vmin;
+    color: White;
+    background-color: var(--xdark-gray);
+    font-family: "Lato", serif;
+    border-radius: 1vmin;
+    border: none;
+    margin: 1vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.2s;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-bottom: 2vmin;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
 }
 
 html {
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  width: 100vw;
-  height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
 }
 
 body {
-  margin: 0;
-  padding: 2vmin;
-  background-color: Black;
-  width: 100%;
-  height: 100%;
+    margin: 0;
+    padding: 2vmin;
+    background-color: Black;
+    width: 100%;
+    height: 100%;
 }
 
 body *:not(script) {
-  display: flex;
+    display: flex;
 }
 
 h1 {
-  font-size: 32px;
-  text-align: center;
-  display: initial;
+    font-size: 32px;
+    text-align: center;
+    display: initial;
 }
 
-button, select, option {
-  cursor: pointer;
-  text-align: center;
+button,
+select,
+option {
+    cursor: pointer;
+    text-align: center;
 }
 
-button:hover, select:hover {
-  filter: brightness(120%);
+button:hover,
+select:hover {
+    filter: brightness(120%);
 }
 
-button:active, select:active {
-  filter: brightness(100%);
+button:active,
+select:active {
+    filter: brightness(100%);
 }
 
 input:focus {
-  filter: brightness(120%);
+    filter: brightness(120%);
 }
 
 button:disabled:hover {
-  filter: brightness(80%);
+    filter: brightness(80%);
 }
 
 button:active:disabled {
-  filter: brightness(80%);
+    filter: brightness(80%);
 }
 
 :disabled {
-  filter: brightness(80%);
-  cursor: initial;
+    filter: brightness(80%);
+    cursor: initial;
 }
 
-tbody, tr {
-  background-color: transparent;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
+tbody,
+tr {
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
 }
 
 table {
-  background-color: transparent;
-  padding: 0;
+    background-color: transparent;
+    padding: 0;
 }
 
 .full-width {
-  width: calc(100% - 2vmin);
+    width: calc(100% - 2vmin);
 }
 
 .full-height {
-  height: calc(100% - 2vmin);
+    height: calc(100% - 2vmin);
 }
 
 .extra-bottom-margin {
-  margin-bottom: 2vmin;
+    margin-bottom: 2vmin;
 }
 
 .grid {
-  display: grid;
-  gap: 2vmin;
-  background: none;
-  padding: 0;
+    display: grid;
+    gap: 2vmin;
+    background: none;
+    padding: 0;
 }
 
-.grid > * {
-  margin: 0;
+.grid>* {
+    margin: 0;
 }
