@@ -108,28 +108,28 @@ option {
 
 button:hover,
 select:hover {
-    filter: brightness(120%);
+    background-color: hsl(from color h calc(s * 1.1) calc(l * 1.1));
 }
 
 button:active,
 select:active {
-    filter: brightness(100%);
+    background-color: hsl(from color h calc(s * 1) calc(l * 1));
 }
 
 input:focus {
-    filter: brightness(120%);
+    background-color: hsl(from color h calc(s * 1.1) calc(l * 1.1));
 }
 
 button:disabled:hover {
-    filter: brightness(80%);
+    background-color: hsl(from color h calc(s * 0.9) calc(l * 0.9));
 }
 
 button:active:disabled {
-    filter: brightness(80%);
+    background-color: hsl(from color h calc(s * 0.9) calc(l * 0.9));
 }
 
 :disabled {
-    filter: brightness(80%);
+    background-color: hsl(from color h calc(s * 0.9) calc(l * 0.9));
     cursor: initial;
 }
 
@@ -165,6 +165,6 @@ table {
     padding: 0;
 }
 
-.grid>* {
+.grid > * {
     margin: 0;
 }
