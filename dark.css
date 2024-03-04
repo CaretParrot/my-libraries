@@ -49,8 +49,8 @@
     --purple-80: hsl(270, 80%, 80%);
     --magenta-80: hsl(300, 80%, 80%);
     --pink-80: hsl(330, 80%, 80%);
-    --xdark-gray: hsl(0, 0%, 12.5%);
-    --dark-gray: hsl(0, 0%, 25%);
+    --xdark-gray: hsl(0, 0%, 20%);
+    --dark-gray: hsl(0, 0%, 30%);
 }
 
 * {
@@ -108,28 +108,28 @@ option {
 
 button:hover,
 select:hover {
-    background-color: hsl(from color h calc(s * 1.1) calc(l * 1.1));
+    background-color: var(--dark-gray);
 }
 
 button:active,
 select:active {
-    background-color: hsl(from color h calc(s * 1) calc(l * 1));
+    background-color: var(--xdark-gray);
 }
 
 input:focus {
-    background-color: hsl(from color h calc(s * 1.1) calc(l * 1.1));
+    background-color: var(--dark-gray);
 }
 
 button:disabled:hover {
-    background-color: hsl(from color h calc(s * 0.9) calc(l * 0.9));
+    background-color: var(--xdark-gray);
 }
 
 button:active:disabled {
-    background-color: hsl(from color h calc(s * 0.9) calc(l * 0.9));
+    background-color: var(--xdark-gray);
 }
 
 :disabled {
-    background-color: hsl(from color h calc(s * 0.9) calc(l * 0.9));
+    background-color: var(--xdark-gray);
     cursor: initial;
 }
 
