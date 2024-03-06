@@ -14,8 +14,8 @@ let randomColor = {
             90: `var(--${this.colors[Math.floor(this.randomIndex)]}-90)`,
         }
 
-        for (let k = 0; k < elements.length; k++) {
-            elements[k].style.backgroundColor = pickedColor.elementsShade;
+        for (let k = 0; k < this.elements.length; k++) {
+            this.elements[k].style.backgroundColor = pickedColor.elementsShade;
         }
 
         document.body.style.backgroundColor = backgroundShade;
