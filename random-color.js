@@ -2,7 +2,7 @@ let randomColor = {
     randomIndex: 0,
     elements: document.body.querySelectorAll("*"),
     pickedColor: {},
-    colors = ["red", "orange", "yellow", "lime", "green", "seafoam", "teal", "sky", "blue", "purple", "magenta", "pink"],
+    colors: ["red", "orange", "yellow", "lime", "green", "seafoam", "teal", "sky", "blue", "purple", "magenta", "pink"],
     
     paint: function (backgroundShade, elementsShade) {
         this.randomIndex = Math.floor(Math.random() * 12);
