@@ -15,10 +15,10 @@ let randomColor = {
         }
 
         for (let k = 0; k < this.elements.length; k++) {
-            this.elements[k].style.backgroundColor = this.pickedColor.elementsShade;
+            this.elements[k].style.backgroundColor = this.pickedColor[elementsShade];
         }
 
-        document.body.style.backgroundColor = backgroundShade;
+        document.body.style.backgroundColor = this.pickedColor[backgroundShade];
         document.documentElement.style.backgroundColor = "transparent";
     }
 }
