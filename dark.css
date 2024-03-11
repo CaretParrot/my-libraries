@@ -104,6 +104,7 @@ body {
 
 body *:not(script) {
     display: flex;
+    flex-grow: 1;
 }
 
 h1 {
