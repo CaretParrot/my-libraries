@@ -101,7 +101,7 @@ body {
     height: 100%;
 }
 
-body *:not(script) {
+*:not(script) {
     display: flex;
 }
 
