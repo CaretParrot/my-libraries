@@ -166,14 +166,3 @@ input[type="number"]::-webkit-outer-spin-button {
 .extra-bottom-margin {
     margin-bottom: 2vmin;
 }
-
-.grid {
-    display: grid;
-    gap: 2vmin;
-    background: none;
-    padding: 0;
-}
-
-.grid > * {
-    margin: 0;
-}
