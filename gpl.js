@@ -94,7 +94,7 @@ function createElement(elementName, text, id, appendTo) {
     appendTo.appendChild(newElement);
     atrribute = document.createAttribute("id");
     atrribute.value = id;
-    newElement.setAttributeNode(newAttribute);
+    atrribute.setAttributeNode(newElement);
 }
 
 function createAttribute(attributeName, val, appendTo) {
