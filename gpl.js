@@ -87,11 +87,14 @@ function detectMouseButton(button, callBackFunction) {
     };
 }
 
-function createElement(elementName, text, appendTo) {
+function createElement(elementName, text, id, appendTo) {
     newElement = document.createElement(elementName);
     textNode = document.createTextNode(text);
     newElement.appendChild(textNode);
     appendTo.appendChild(newElement);
+    atrribute = document.createAttribute("id");
+    atrribute.value = id;
+    newElement.setAttributeNode(newAttribute);
 }
 
 function createAttribute(attributeName, val, appendTo) {
