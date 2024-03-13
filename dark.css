@@ -132,7 +132,7 @@ select:active {
 }
 
 input:focus {
-    background-color: var(--dark-gray);
+    background-color: var(--gray-20);
 }
 
 button:disabled:hover {
