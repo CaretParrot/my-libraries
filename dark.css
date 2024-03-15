@@ -80,10 +80,11 @@
     transition: 0.2s;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    margin-bottom: 2vmin;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: scroll;
+    align-items: center;
+    align-content: center;
 }
 
 html {
@@ -110,7 +111,7 @@ body *:not(script) {
 
 h1 {
     font-size: 32px;
-    text-align: center;
+    justify-content: center;
     display: initial;
 }
 
