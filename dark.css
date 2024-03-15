@@ -83,8 +83,6 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: scroll;
-    align-items: center;
-    align-content: center;
 }
 
 html {
@@ -166,6 +164,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .extra-bottom-margin {
     margin-bottom: 2vmin;
+}
+
+div {
+    align-items: center;
+    align-content: center;
 }
 
 div * {
