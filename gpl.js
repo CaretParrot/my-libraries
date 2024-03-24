@@ -170,5 +170,5 @@ function show(id) {
 
 let vw = window.innerWidth / 100;
 let vh = window.innerHeight / 100;
-let fullWidth = window.innerWidth - (2 * window.innerWidth / 100);
-let fullHeight = window.innerHeight - (2 * window.innerHeight / 100);
+let fullWidth = window.innerWidth - (4 * window.innerWidth / 100);
+let fullHeight = window.innerHeight - (4 * window.innerHeight / 100);
