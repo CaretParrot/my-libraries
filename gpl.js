@@ -152,8 +152,8 @@ function randomCardName() {
     return `${randomCardNumber} of ${randomSuit}`;
 }
 
-function id(id) {
-    return document.getElementById(id);
+function id(idInput) {
+    return document.getElementById(idInput);
 }
 
 function elementsOf(classGroup) {
@@ -170,3 +170,5 @@ function show(id) {
 
 let vw = window.innerWidth / 100;
 let vh = window.innerHeight / 100;
+let fullWidth = window.innerWidth - (2 * window.innerWidth / 100);
+let fullHeight = window.innerHeight - (2 * window.innerHeight / 100);
