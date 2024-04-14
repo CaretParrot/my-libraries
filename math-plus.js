@@ -224,6 +224,6 @@ function MathFunction(output, input, variable) {
     this.evaluate = function (inputVal) {
         let replaceMethod = new RegExp(variable, "g");
         let evaluatedOutput = Function(`return ${input.replace(replaceMethod, inputVal)};`)();
-        return Math.round(evaluatedOutput * (10 ** mathPlus.rounding)) / (10 ** mathPlus.rounding);
+        return Math.round(evaluatedOutput * (10 ** mathPlus.settings.rounding)) / (10 ** mathPlus.settings.rounding);
     }
 }
