@@ -7,10 +7,10 @@ let randomColor = {
         this.elements = document.body.querySelectorAll("*");
 
         for (let k = 0; k < this.elements.length; k++) {
-            this.elements[k].style.backgroundColor = this.pickedElementShade;
+            this.elements[k].style.backgroundColor = `hsl(${this.randomHue}, ${elementsShade}%, ${backgroundShade}%)`;
         }
 
-        document.body.style.backgroundColor = this.pickedBackgroundShade;
+        document.body.style.backgroundColor = `hsl(${this.randomHue}, ${backgroundShade}%, ${backgroundShade}%)`;
         document.documentElement.style.backgroundColor = "transparent";
     }
 }
