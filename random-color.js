@@ -1,24 +1,17 @@
 let randomColor = {
-    randomIndex: 0,
+    randomHue: 0,
     elements: document.body.querySelectorAll("*"),
     pickedColor: {},
-    colors: ["red", "orange", "yellow", "lime", "green", "seafoam", "teal", "sky", "blue", "purple", "magenta", "pink"],
 
     paint: function (backgroundShade, elementsShade) {
-        this.randomIndex = Math.floor(Math.random() * 12);
-        this.pickedColor = {
-            50: `var(--${this.colors[Math.floor(this.randomIndex)]}-50)`,
-            60: `var(--${this.colors[Math.floor(this.randomIndex)]}-60)`,
-            70: `var(--${this.colors[Math.floor(this.randomIndex)]}-70)`,
-            80: `var(--${this.colors[Math.floor(this.randomIndex)]}-80)`,
-            90: `var(--${this.colors[Math.floor(this.randomIndex)]}-90)`,
-        }
+        this.randomHue = Math.floor(Math.random() * 360);
+        this.elements = document.body.querySelectorAll("*");
 
         for (let k = 0; k < this.elements.length; k++) {
-            this.elements[k].style.backgroundColor = this.pickedColor[elementsShade];
+            this.elements[k].style.backgroundColor = `hsl(${this.randomHue}, ${elementsShade}%, ${elementsShade}%)`;
         }
 
-        document.body.style.backgroundColor = this.pickedColor[backgroundShade];
+        document.body.style.backgroundColor = `hsl(${this.randomHue}, ${backgroundShade}%, ${backgroundShade}%)`;
         document.documentElement.style.backgroundColor = "transparent";
     }
 }
