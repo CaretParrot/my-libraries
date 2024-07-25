@@ -1,74 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-:root {
-    --red-50: hsl(0, 50%, 50%);
-    --orange-50: hsl(30, 50%, 50%);
-    --yellow-50: hsl(60, 50%, 50%);
-    --lime-50: hsl(90, 50%, 50%);
-    --green-50: hsl(120, 50%, 50%);
-    --seafoam-50: hsl(150, 50%, 50%);
-    --teal-50: hsl(180, 50%, 50%);
-    --sky-50: hsl(210, 50%, 50%);
-    --blue-50: hsl(240, 50%, 50%);
-    --purple-50: hsl(270, 50%, 50%);
-    --magenta-50: hsl(300, 50%, 50%);
-    --pink-50: hsl(330, 50%, 50%);
-    --red-60: hsl(0, 60%, 60%);
-    --orange-60: hsl(30, 60%, 60%);
-    --yellow-60: hsl(60, 60%, 60%);
-    --lime-60: hsl(90, 60%, 60%);
-    --green-60: hsl(120, 60%, 60%);
-    --seafoam-60: hsl(150, 60%, 60%);
-    --teal-60: hsl(180, 60%, 60%);
-    --sky-60: hsl(210, 60%, 60%);
-    --blue-60: hsl(240, 60%, 60%);
-    --purple-60: hsl(270, 60%, 60%);
-    --magenta-60: hsl(300, 60%, 60%);
-    --pink-60: hsl(330, 60%, 60%);
-    --red-70: hsl(0, 70%, 70%);
-    --orange-70: hsl(30, 70%, 70%);
-    --yellow-70: hsl(60, 70%, 70%);
-    --lime-70: hsl(90, 70%, 70%);
-    --green-70: hsl(120, 70%, 70%);
-    --seafoam-70: hsl(150, 70%, 70%);
-    --teal-70: hsl(180, 70%, 70%);
-    --sky-70: hsl(210, 70%, 70%);
-    --blue-70: hsl(240, 70%, 70%);
-    --purple-70: hsl(270, 70%, 70%);
-    --magenta-70: hsl(300, 70%, 70%);
-    --pink-70: hsl(330, 70%, 70%);
-    --red-80: hsl(0, 80%, 80%);
-    --orange-80: hsl(30, 80%, 80%);
-    --yellow-80: hsl(60, 80%, 80%);
-    --lime-80: hsl(90, 80%, 80%);
-    --green-80: hsl(120, 80%, 80%);
-    --seafoam-80: hsl(150, 80%, 80%);
-    --teal-80: hsl(180, 80%, 80%);
-    --sky-80: hsl(210, 80%, 80%);
-    --blue-80: hsl(240, 80%, 80%);
-    --purple-80: hsl(270, 80%, 80%);
-    --magenta-80: hsl(300, 80%, 80%);
-    --pink-80: hsl(330, 80%, 80%);
-    --red-90: hsl(0, 90%, 90%);
-    --orange-90: hsl(30, 90%, 90%);
-    --yellow-90: hsl(60, 90%, 90%);
-    --lime-90: hsl(90, 90%, 90%);
-    --green-90: hsl(120, 90%, 90%);
-    --seafoam-90: hsl(150, 90%, 90%);
-    --teal-90: hsl(190, 90%, 90%);
-    --sky-90: hsl(210, 90%, 90%);
-    --blue-90: hsl(240, 90%, 90%);
-    --purple-90: hsl(270, 90%, 90%);
-    --magenta-90: hsl(300, 90%, 90%);
-    --pink-90: hsl(330, 90%, 90%);
-    --gray-10: hsl(0, 0%, 10%);
-    --gray-20: hsl(0, 0%, 20%);
-    --gray-30: hsl(0, 0%, 30%);
-}
-
 * {
     color: White;
-    background-color: var(--gray-10);
+    background-color: "hsl(0, 0%, 10%)";
     font-family: "Lato", sans-serif;
     border-radius: 1vmin;
     border: none;
@@ -124,28 +58,28 @@ option {
 
 button:hover,
 select:hover {
-    background-color: var(--gray-20);
+    background-color: "hsl(0, 0%, 20%)";
 }
 
 button:active,
 select:active {
-    background-color: var(--gray-20);
+    background-color: "hsl(0, 0%, 20%)";
 }
 
 input:focus {
-    background-color: var(--gray-20);
+    background-color: "hsl(0, 0%, 20%)";
 }
 
 button:disabled:hover {
-    background-color: var(--gray-30);
+    background-color: "hsl(0, 0%, 30%)";
 }
 
 button:active:disabled {
-    background-color: var(--gray-30);
+    background-color: "hsl(0, 0%, 30%)";
 }
 
 :disabled {
-    background-color: var(--gray-30);
+    background-color: "hsl(0, 0%, 30%)";
     cursor: initial;
 }
 
@@ -169,5 +103,5 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 div * {
-    background-color: var(--gray-20);
+    background-color: "hsl(0, 0%, 20%)";
 }
