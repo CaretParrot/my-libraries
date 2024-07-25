@@ -7,7 +7,7 @@ let randomColor = {
         this.elements = document.body.querySelectorAll("*");
 
         for (let k = 0; k < this.elements.length; k++) {
-            this.elements[k].style.backgroundColor = `hsl(${this.randomHue}, ${elementsShade}%, ${backgroundShade}%)`;
+            this.elements[k].style.backgroundColor = `hsl(${this.randomHue}, ${elementsShade}%, ${elementsShade}%)`;
         }
 
         document.body.style.backgroundColor = `hsl(${this.randomHue}, ${backgroundShade}%, ${backgroundShade}%)`;
