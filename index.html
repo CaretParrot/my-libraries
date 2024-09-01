@@ -26,10 +26,6 @@
                 display: flex;
             }
 
-            body {
-                background-color: hsl(0, 0%, 50%);
-            }
-
             html {
                 height: auto;
                 width: auto;
@@ -39,6 +35,20 @@
                 width: 100%;
                 height: 100%;
                 border-radius: 0;
+            }
+
+            #black {
+                background-color: Black;
+                color: White;
+            }
+
+            #white {
+                background-color: White;
+                color: Black;
+            }
+
+            #black, #white {
+                grid-area: span 1 / span 4
             }
         </style>
     </head>
@@ -93,6 +103,8 @@
             <button>20</button>
             <button>80</button>
             <button>90</button>
+            <button id="black">Black</button>
+            <button id="white">White</button>
         </div>
         <script>
             const colorPalletes = {
