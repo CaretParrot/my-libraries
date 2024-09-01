@@ -10,12 +10,16 @@
         <style>
             div {
                 display: grid;
-                grid: auto / auto auto auto auto auto auto auto auto auto auto auto auto;
+                grid: auto / auto auto auto auto auto auto auto auto;
                 background-color: transparent;
                 margin: 0;
                 padding: 0;
                 width: 100%;
                 height: 100%;
+                max-width: calc(100% - 2rem);
+                justify-content: stretch;
+                align-content: stretch;
+                align-items: stretch;
             }
 
             body * :not(script) {
@@ -33,84 +37,62 @@
 
             button {
                 width: 100%;
+                height: 100%;
+                border-radius: 0;
             }
         </style>
     </head>
 
     <body>
         <div>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
-            <button>0</button>
             <button>10</button>
             <button>20</button>
             <button>80</button>
             <button>90</button>
-            <button>100</button>
         </div>
         <script>
             const colorPalletes = {
@@ -190,99 +172,133 @@
                 }
             }
 
-            const buttons = document.getElementsByTagName("button");
 
-            buttons[0].style.backgroundColor = colorPalletes.black;
-            buttons[1].style.backgroundColor = colorPalletes.red[10];
-            buttons[2].style.backgroundColor = colorPalletes.red[20];
-            buttons[3].style.backgroundColor = colorPalletes.red[80];
-            buttons[4].style.backgroundColor = colorPalletes.red[90];
-            buttons[5].style.backgroundColor = colorPalletes.white;
+            window.onload = function () {
+                const buttons = document.getElementsByTagName("button");
+                
+                buttons[0].style.backgroundColor = colorPalletes.red[10];
+                buttons[1].style.backgroundColor = colorPalletes.red[20];
+                buttons[2].style.backgroundColor = colorPalletes.red[80];
+                buttons[3].style.backgroundColor = colorPalletes.red[90];
 
-            buttons[6].style.backgroundColor = colorPalletes.black;
-            buttons[7].style.backgroundColor = colorPalletes.orange[10];
-            buttons[8].style.backgroundColor = colorPalletes.orange[20];
-            buttons[9].style.backgroundColor = colorPalletes.orange[80];
-            buttons[10].style.backgroundColor = colorPalletes.orange[90];
-            buttons[11].style.backgroundColor = colorPalletes.white;
+                buttons[4].style.backgroundColor = colorPalletes.orange[10];
+                buttons[5].style.backgroundColor = colorPalletes.orange[20];
+                buttons[6].style.backgroundColor = colorPalletes.orange[80];
+                buttons[7].style.backgroundColor = colorPalletes.orange[90];
 
-            buttons[12].style.backgroundColor = colorPalletes.black;
-            buttons[13].style.backgroundColor = colorPalletes.yellow[10];
-            buttons[14].style.backgroundColor = colorPalletes.yellow[20];
-            buttons[15].style.backgroundColor = colorPalletes.yellow[80];
-            buttons[16].style.backgroundColor = colorPalletes.yellow[90];
-            buttons[17].style.backgroundColor = colorPalletes.white;
+                buttons[8].style.backgroundColor = colorPalletes.yellow[10];
+                buttons[9].style.backgroundColor = colorPalletes.yellow[20];
+                buttons[10].style.backgroundColor = colorPalletes.yellow[80];
+                buttons[11].style.backgroundColor = colorPalletes.yellow[90];
 
-            buttons[18].style.backgroundColor = colorPalletes.black;
-            buttons[19].style.backgroundColor = colorPalletes.lime[10];
-            buttons[20].style.backgroundColor = colorPalletes.lime[20];
-            buttons[21].style.backgroundColor = colorPalletes.lime[80];
-            buttons[22].style.backgroundColor = colorPalletes.lime[90];
-            buttons[23].style.backgroundColor = colorPalletes.white;
+                buttons[12].style.backgroundColor = colorPalletes.lime[10];
+                buttons[13].style.backgroundColor = colorPalletes.lime[20];
+                buttons[14].style.backgroundColor = colorPalletes.lime[80];
+                buttons[15].style.backgroundColor = colorPalletes.lime[90];
 
-            buttons[24].style.backgroundColor = colorPalletes.black;
-            buttons[25].style.backgroundColor = colorPalletes.green[10];
-            buttons[26].style.backgroundColor = colorPalletes.green[20];
-            buttons[27].style.backgroundColor = colorPalletes.green[80];
-            buttons[28].style.backgroundColor = colorPalletes.green[90];
-            buttons[29].style.backgroundColor = colorPalletes.white;
+                buttons[16].style.backgroundColor = colorPalletes.green[10];
+                buttons[17].style.backgroundColor = colorPalletes.green[20];
+                buttons[18].style.backgroundColor = colorPalletes.green[80];
+                buttons[19].style.backgroundColor = colorPalletes.green[90];
 
-            buttons[30].style.backgroundColor = colorPalletes.black;
-            buttons[31].style.backgroundColor = colorPalletes.seafoam[10];
-            buttons[32].style.backgroundColor = colorPalletes.seafoam[20];
-            buttons[33].style.backgroundColor = colorPalletes.seafoam[80];
-            buttons[34].style.backgroundColor = colorPalletes.seafoam[90];
-            buttons[35].style.backgroundColor = colorPalletes.white;
+                buttons[20].style.backgroundColor = colorPalletes.seafoam[10];
+                buttons[21].style.backgroundColor = colorPalletes.seafoam[20];
+                buttons[22].style.backgroundColor = colorPalletes.seafoam[80];
+                buttons[23].style.backgroundColor = colorPalletes.seafoam[90];
 
-            buttons[36].style.backgroundColor = colorPalletes.black;
-            buttons[37].style.backgroundColor = colorPalletes.teal[10];
-            buttons[38].style.backgroundColor = colorPalletes.teal[20];
-            buttons[39].style.backgroundColor = colorPalletes.teal[80];
-            buttons[40].style.backgroundColor = colorPalletes.teal[90];
-            buttons[41].style.backgroundColor = colorPalletes.white;
+                buttons[24].style.backgroundColor = colorPalletes.teal[10];
+                buttons[25].style.backgroundColor = colorPalletes.teal[20];
+                buttons[26].style.backgroundColor = colorPalletes.teal[80];
+                buttons[27].style.backgroundColor = colorPalletes.teal[90];
 
-            buttons[42].style.backgroundColor = colorPalletes.black;
-            buttons[43].style.backgroundColor = colorPalletes.sky[10];
-            buttons[44].style.backgroundColor = colorPalletes.sky[20];
-            buttons[45].style.backgroundColor = colorPalletes.sky[80];
-            buttons[46].style.backgroundColor = colorPalletes.sky[90];
-            buttons[47].style.backgroundColor = colorPalletes.white;
+                buttons[28].style.backgroundColor = colorPalletes.sky[10];
+                buttons[29].style.backgroundColor = colorPalletes.sky[20];
+                buttons[30].style.backgroundColor = colorPalletes.sky[80];
+                buttons[31].style.backgroundColor = colorPalletes.sky[90];
 
-            buttons[48].style.backgroundColor = colorPalletes.black;
-            buttons[49].style.backgroundColor = colorPalletes.blue[10];
-            buttons[50].style.backgroundColor = colorPalletes.blue[20];
-            buttons[51].style.backgroundColor = colorPalletes.blue[80];
-            buttons[52].style.backgroundColor = colorPalletes.blue[90];
-            buttons[53].style.backgroundColor = colorPalletes.white;
+                buttons[32].style.backgroundColor = colorPalletes.blue[10];
+                buttons[33].style.backgroundColor = colorPalletes.blue[20];
+                buttons[34].style.backgroundColor = colorPalletes.blue[80];
+                buttons[35].style.backgroundColor = colorPalletes.blue[90];
 
-            buttons[54].style.backgroundColor = colorPalletes.black;
-            buttons[55].style.backgroundColor = colorPalletes.purple[10];
-            buttons[56].style.backgroundColor = colorPalletes.purple[20];
-            buttons[57].style.backgroundColor = colorPalletes.purple[80];
-            buttons[58].style.backgroundColor = colorPalletes.purple[90];
-            buttons[59].style.backgroundColor = colorPalletes.white;
+                buttons[36].style.backgroundColor = colorPalletes.purple[10];
+                buttons[37].style.backgroundColor = colorPalletes.purple[20];
+                buttons[38].style.backgroundColor = colorPalletes.purple[80];
+                buttons[39].style.backgroundColor = colorPalletes.purple[90];
 
-            buttons[60].style.backgroundColor = colorPalletes.black;
-            buttons[61].style.backgroundColor = colorPalletes.pink[10];
-            buttons[62].style.backgroundColor = colorPalletes.pink[20];
-            buttons[63].style.backgroundColor = colorPalletes.pink[80];
-            buttons[64].style.backgroundColor = colorPalletes.pink[90];
-            buttons[65].style.backgroundColor = colorPalletes.white;
+                buttons[40].style.backgroundColor = colorPalletes.pink[10];
+                buttons[41].style.backgroundColor = colorPalletes.pink[20];
+                buttons[42].style.backgroundColor = colorPalletes.pink[80];
+                buttons[43].style.backgroundColor = colorPalletes.pink[90];
 
-            buttons[66].style.backgroundColor = colorPalletes.black;
-            buttons[67].style.backgroundColor = colorPalletes.rose[10];
-            buttons[68].style.backgroundColor = colorPalletes.rose[20];
-            buttons[69].style.backgroundColor = colorPalletes.rose[80];
-            buttons[70].style.backgroundColor = colorPalletes.rose[90];
-            buttons[71].style.backgroundColor = colorPalletes.white;
+                buttons[44].style.backgroundColor = colorPalletes.rose[10];
+                buttons[45].style.backgroundColor = colorPalletes.rose[20];
+                buttons[46].style.backgroundColor = colorPalletes.rose[80];
+                buttons[47].style.backgroundColor = colorPalletes.rose[90];
 
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].onclick = "copyColor()";
-            }
+                buttons[0].style.color = colorPalletes.red[90];
+                buttons[1].style.color = colorPalletes.red[80];
+                buttons[2].style.color = colorPalletes.red[20];
+                buttons[3].style.color = colorPalletes.red[10];
 
-            function copyColor() {
-                console.log(this.style.backgroundColor);
-                navigator.clipboard.writeText(this.style.backgroundColor);
+                buttons[4].style.color = colorPalletes.orange[90];
+                buttons[5].style.color = colorPalletes.orange[80];
+                buttons[6].style.color = colorPalletes.orange[20];
+                buttons[7].style.color = colorPalletes.orange[10];
+
+                buttons[8].style.color = colorPalletes.yellow[90];
+                buttons[9].style.color = colorPalletes.yellow[80];
+                buttons[10].style.color = colorPalletes.yellow[20];
+                buttons[11].style.color = colorPalletes.yellow[10];
+
+                buttons[12].style.color = colorPalletes.lime[90];
+                buttons[13].style.color = colorPalletes.lime[80];
+                buttons[14].style.color = colorPalletes.lime[20];
+                buttons[15].style.color = colorPalletes.lime[10];
+
+                buttons[16].style.color = colorPalletes.green[90];
+                buttons[17].style.color = colorPalletes.green[80];
+                buttons[18].style.color = colorPalletes.green[20];
+                buttons[19].style.color = colorPalletes.green[10];
+
+                buttons[20].style.color = colorPalletes.seafoam[90];
+                buttons[21].style.color = colorPalletes.seafoam[80];
+                buttons[22].style.color = colorPalletes.seafoam[20];
+                buttons[23].style.color = colorPalletes.seafoam[10];
+
+                buttons[24].style.color = colorPalletes.teal[90];
+                buttons[25].style.color = colorPalletes.teal[80];
+                buttons[26].style.color = colorPalletes.teal[20];
+                buttons[27].style.color = colorPalletes.teal[10];
+
+                buttons[28].style.color = colorPalletes.sky[90];
+                buttons[29].style.color = colorPalletes.sky[80];
+                buttons[30].style.color = colorPalletes.sky[20];
+                buttons[31].style.color = colorPalletes.sky[10];
+
+                buttons[32].style.color = colorPalletes.blue[90];
+                buttons[33].style.color = colorPalletes.blue[80];
+                buttons[34].style.color = colorPalletes.blue[20];
+                buttons[35].style.color = colorPalletes.blue[10];
+
+                buttons[36].style.color = colorPalletes.purple[90];
+                buttons[37].style.color = colorPalletes.purple[80];
+                buttons[38].style.color = colorPalletes.purple[20];
+                buttons[39].style.color = colorPalletes.purple[10];
+
+                buttons[40].style.color = colorPalletes.pink[90];
+                buttons[41].style.color = colorPalletes.pink[80];
+                buttons[42].style.color = colorPalletes.pink[20];
+                buttons[43].style.color = colorPalletes.pink[10];
+
+                buttons[44].style.color = colorPalletes.rose[90];
+                buttons[45].style.color = colorPalletes.rose[80];
+                buttons[46].style.color = colorPalletes.rose[20];
+                buttons[47].style.color = colorPalletes.rose[10];
+
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${buttons[i].style.backgroundColor}")`);
+                }
             }
         </script>
     </body>
