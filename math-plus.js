@@ -109,6 +109,9 @@ let mathPlus = {
             total *= i;
         }
         return total;
+    },
+    roundToPlaces: function (number) {
+        return Math.round(number * 10 * mathPlus.settings.rounding) / (10 * mathPlus.settings.rounding);
     }
 }
 
