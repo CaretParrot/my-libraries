@@ -111,7 +111,7 @@ let mathPlus = {
         return total;
     },
     roundToPlaces: function (number) {
-        return Math.round(number * 10 * mathPlus.settings.rounding) / (10 * mathPlus.settings.rounding);
+        return Math.round(number * (10 ** mathPlus.settings.rounding)) / (10 ** mathPlus.settings.rounding);
     }
 }
 
