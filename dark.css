@@ -37,7 +37,7 @@ body {
 }
 
 body * :not(script) {
-    display: flex !important;
+    display: flex;
 }
 
 h1 {
