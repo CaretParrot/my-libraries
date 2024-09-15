@@ -124,7 +124,7 @@ let mathPlus = {
 
 function sin(x) {
     if (mathPlus.settings.degrees === true) {
-        return Math.sin(mathPlus.toDegrees(x));
+        return Math.sin(mathPlus.toRadians(x));
     } else {
         return Math.sin(x);
     }
@@ -132,7 +132,7 @@ function sin(x) {
 
 function sinh(x) {
     if (mathPlus.settings.degrees === true) {
-        return Math.sinh(mathPlus.toDegrees(x));
+        return Math.sinh(mathPlus.toRadians(x));
     } else {
         return Math.sinh(x);
     }
@@ -140,7 +140,7 @@ function sinh(x) {
 
 function arcsin(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.asin(x));
+        return mathPlus.toRadians(Math.asin(x));
     } else {
         return Math.asin(x);
     }
@@ -148,7 +148,7 @@ function arcsin(x) {
 
 function arcsinh(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.asinh(x));
+        return mathPlus.toRadians(Math.asinh(x));
     } else {
         return Math.asinh(x);
     }
@@ -156,7 +156,7 @@ function arcsinh(x) {
 
 function cos(x) {
     if (mathPlus.settings.degrees === true) {
-        return Math.cos(mathPlus.toDegrees(x));
+        return Math.cos(mathPlus.toRadians(x));
     } else {
         return Math.cos(x);
     }
@@ -164,7 +164,7 @@ function cos(x) {
 
 function cosh(x) {
     if (mathPlus.settings.degrees === true) {
-        return Math.cosh(mathPlus.toDegrees(x));
+        return Math.cosh(mathPlus.toRadians(x));
     } else {
         return Math.cosh(x);
     }
@@ -172,7 +172,7 @@ function cosh(x) {
 
 function arccos(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.acos(x));
+        return mathPlus.toRadians(Math.acos(x));
     } else {
         return Math.acos(x);
     }
@@ -180,7 +180,7 @@ function arccos(x) {
 
 function arccosh(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.acosh(x));
+        return mathPlus.toRadians(Math.acosh(x));
     } else {
         return Math.acosh(x);
     }
@@ -188,7 +188,7 @@ function arccosh(x) {
 
 function tan(x) {
     if (mathPlus.settings.degrees === true) {
-        return Math.tan(mathPlus.toDegrees(x));
+        return Math.tan(mathPlus.toRadians(x));
     } else {
         return Math.tan(x);
     }
@@ -196,7 +196,7 @@ function tan(x) {
 
 function tanh(x) {
     if (mathPlus.settings.degrees === true) {
-        return Math.tanh(mathPlus.toDegrees(x));
+        return Math.tanh(mathPlus.toRadians(x));
     } else {
         return Math.tanh(x);
     }
@@ -204,7 +204,7 @@ function tanh(x) {
 
 function arctan(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.atan(x));
+        return mathPlus.toRadians(Math.atan(x));
     } else {
         return Math.atan(x);
     }
@@ -212,7 +212,7 @@ function arctan(x) {
 
 function arctanh(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.atanh(x));
+        return mathPlus.toRadians(Math.atanh(x));
     } else {
         return Math.atanh(x);
     }
@@ -220,7 +220,7 @@ function arctanh(x) {
 
 function csc(x) {
     if (mathPlus.settings.degrees === true) {
-        return 1 / Math.sin(mathPlus.toDegrees(x));
+        return 1 / Math.sin(mathPlus.toRadians(x));
     } else {
         return 1 / Math.sin(x);
     }
@@ -228,7 +228,7 @@ function csc(x) {
 
 function csch(x) {
     if (mathPlus.settings.degrees === true) {
-        return 1 / Math.sinh(mathPlus.toDegrees(x));
+        return 1 / Math.sinh(mathPlus.toRadians(x));
     } else {
         return 1 / Math.sinh(x);
     }
@@ -236,7 +236,7 @@ function csch(x) {
 
 function arccsc(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.asin(1 / x));
+        return mathPlus.toRadians(Math.asin(1 / x));
     } else {
         return Math.asin(1 / x);
     }
@@ -244,7 +244,7 @@ function arccsc(x) {
 
 function arccsc(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.asinh(1 / x));
+        return mathPlus.toRadians(Math.asinh(1 / x));
     } else {
         return Math.asinh(1 / x);
     }
@@ -252,7 +252,7 @@ function arccsc(x) {
 
 function sec(x) {
     if (mathPlus.settings.degrees === true) {
-        return 1 / Math.cos(mathPlus.toDegrees(x));
+        return 1 / Math.cos(mathPlus.toRadians(x));
     } else {
         return 1 / Math.cos(x);
     }
@@ -260,7 +260,7 @@ function sec(x) {
 
 function sech(x) {
     if (mathPlus.settings.degrees === true) {
-        return 1 / Math.cosh(mathPlus.toDegrees(x));
+        return 1 / Math.cosh(mathPlus.toRadians(x));
     } else {
         return 1 / Math.cosh(x);
     }
@@ -268,7 +268,7 @@ function sech(x) {
 
 function arcsec(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.acos(1 / x));
+        return mathPlus.toRadians(Math.acos(1 / x));
     } else {
         return Math.acos(1 / x);
     }
@@ -276,7 +276,7 @@ function arcsec(x) {
 
 function arcsec(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.acosh(1 / x));
+        return mathPlus.toRadians(Math.acosh(1 / x));
     } else {
         return Math.acosh(1 / x);
     }
@@ -284,7 +284,7 @@ function arcsec(x) {
 
 function cot(x) {
     if (mathPlus.settings.degrees === true) {
-        return 1 / Math.tan(mathPlus.toDegrees(x));
+        return 1 / Math.tan(mathPlus.toRadians(x));
     } else {
         return 1 / Math.tan(x);
     }
@@ -292,7 +292,7 @@ function cot(x) {
 
 function coth(x) {
     if (mathPlus.settings.degrees === true) {
-        return 1 / Math.tanh(mathPlus.toDegrees(x));
+        return 1 / Math.tanh(mathPlus.toRadians(x));
     } else {
         return 1 / Math.tanh(x);
     }
@@ -300,7 +300,7 @@ function coth(x) {
 
 function arccot(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.PI / 2 - Math.atan(x));
+        return mathPlus.toRadians(Math.PI / 2 - Math.atan(x));
     } else {
         return Math.PI / 2 - Math.atan(x);
     }
@@ -308,7 +308,7 @@ function arccot(x) {
 
 function arccoth(x) {
     if (mathPlus.settings.degrees === true) {
-        return mathPlus.toDegrees(Math.atanh(1 / x));
+        return mathPlus.toRadians(Math.atanh(1 / x));
     } else {
         return Math.atanh(1 / x);
     }
