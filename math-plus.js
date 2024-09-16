@@ -112,7 +112,11 @@ let mathPlus = {
         return total;
     },
     roundToPlaces: function (number) {
-        return Math.round(number * (10 ** mathPlus.settings.rounding)) / (10 ** mathPlus.settings.rounding);
+        if (number > 0) {
+            return Math.round(number * (10 ** mathPlus.settings.rounding)) / (10 ** mathPlus.settings.rounding);
+        } else {
+            return number;
+        }
     },
     toDegrees: function (number) {
         return number * 180 / Math.PI;
@@ -345,6 +349,6 @@ function MathFunction(output, input, variable) {
     this.evaluate = function (inputVal) {
         let replaceMethod = new RegExp(variable, "g");
         let evaluatedOutput = Function(`return ${input.replace(replaceMethod, inputVal)};`)();
-        return Math.round(evaluatedOutput * (10 ** mathPlus.settings.rounding)) / (10 ** mathPlus.settings.rounding);
+        return mathPlus.roundToPlaces(evaluatedOutput);
     }
 }
