@@ -345,6 +345,7 @@ function ceil(x) {
 function random(x) {
     return Math.random(x);
 }
+
 function MathFunction(output, input, variable) {
     this.evaluate = function (inputVal) {
         let replaceMethod = new RegExp(variable, "g");
