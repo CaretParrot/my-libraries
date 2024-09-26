@@ -51,7 +51,8 @@
                 grid-area: span 1 / span 4;
             }
         </style>
-        <script defer src="https://caretparrot.github.io/My-Libraries/colorPalletes.js"></script>
+        <script defer src="./colorPalletes.js"></script>
+        <script defer src="./physics.js"></script>
     </head>
 
     <body>
@@ -234,7 +235,10 @@
                 for (let i = 0; i < buttons.length; i++) {
                     buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${buttons[i].style.backgroundColor}")`);
                 }
+                
+                console.log(physics.constants.electronMass);
             }
+
         </script>
     </body>
 
