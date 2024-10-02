@@ -84,18 +84,22 @@ const colorPalletes = {
             backgroundShade2 = 20;
             textShade1 = 90;
             textShade2 = 80;
-            document.body.style.backgroundColor = "Black";
         } else {
             backgroundShade1 = 90;
             backgroundShade2 = 80;
             textShade1 = 10;
             textShade2 = 20;
-            document.body.style.backgroundColor = "White";
         }
         let allElements = document.querySelectorAll("*");
         for (let i = 0; i < allElements.length; i++) {
             allElements[i].style.backgroundColor = colorPalletes[color][10];
             allElements[i].style.color = colorPalletes[color][90];
+        }
+
+        if (darkMode) {
+            document.body.style.backgroundColor = "Black";
+        } else {
+            document.body.style.backgroundColor = "White";
         }
     }
 }
