@@ -8,24 +8,6 @@ let newAttribute;
 let idTree;
 let classTree;
 
-function setupTree() {
-    idTree = {};
-    classTree = {};
-
-    let allElements = document.querySelectorAll("*");;
-
-    for (o = 0; o < allElements.length; o++) {
-        if (allElements[o].id) {
-            idTree[`${allElements[o].id}`] = allElements[o];
-        }
-
-        if (allElements[o].className) {
-            classTree[`${allElements[o].className}`] = allElements[o];
-        }
-    }
-}
-
-
 function slideShow(element, slidesHTML, triggerKey, triggerMouse) {
     p = 0;
     element.innerHTML = slidesHTML[p];
@@ -69,22 +51,6 @@ function autoSlideShow(element, slidesHTML, delay) {
 
         element.innerHTML = slidesHTML[p];
     }, delay * 1000);
-}
-
-function detectKey(key, callBackFunction) {
-    onkeydown = function (event) {
-        if (event.key == key) {
-            callBackFunction();
-        }
-    };
-}
-
-function detectMouseButton(button, callBackFunction) {
-    onmousedown = function (event) {
-        if (event.button == button) {
-            callBackFunction();
-        }
-    };
 }
 
 function createElement(elementName, text, id, appendTo) {
@@ -152,23 +118,5 @@ function randomCardName() {
     return `${randomCardNumber} of ${randomSuit}`;
 }
 
-function id(idInput) {
-    return document.getElementById(idInput);
-}
-
-function elementsOf(classGroup) {
-    return document.getElementsByClassName(classGroup);
-}
-
-function hide(id) {
-    id.style.display = "none";
-}
-
-function show(id) {
-    id.style.display = "initial";
-}
-
 let vw = window.innerWidth / 100;
 let vh = window.innerHeight / 100;
-let fullWidth = window.innerWidth - (4 * window.innerWidth / 100);
-let fullHeight = window.innerHeight - (4 * window.innerHeight / 100);
