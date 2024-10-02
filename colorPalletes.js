@@ -90,7 +90,7 @@ const colorPalletes = {
             textShade1 = 10;
             textShade2 = 20;
         }
-        let allElements = document.querySelectorAll("*");
+        let allElements = document.querySelectorAll(":not(body, script, .noPaint)");
         for (let i = 0; i < allElements.length; i++) {
             allElements[i].style.backgroundColor = colorPalletes[color][10];
             allElements[i].style.color = colorPalletes[color][90];
