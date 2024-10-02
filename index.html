@@ -235,10 +235,13 @@
                 for (let i = 0; i < buttons.length; i++) {
                     buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${buttons[i].style.backgroundColor}")`);
                 }
-                
-                console.log(physics.constants.electronMass);
             }
 
+            onkeydown = function(event) {
+                if (event.key === " ") {
+                    colorPalletes.paint("green", true);
+                }
+            }
         </script>
     </body>
 
