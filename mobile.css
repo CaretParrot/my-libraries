@@ -1,15 +1,5 @@
 @media screen and (max-width: 1080px) {
     * {
-        font-size: 2rem;
-        padding: 2rem;
-        margin: 2rem;
-    }
-
-    h1 {
-        font-size: 4rem;
-    }
-
-    h2 {
-        font-size: 3rem;
+        font-size: 1.5vmin;
     }
 }
