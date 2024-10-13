@@ -1,10 +1,8 @@
-@media (hover: none) {
-    * {
-        font-size: 3vmin;
-    }
+* {
+    font-size: 3vmin;
+}
 
-    body, body * {
-        padding: 1rem;
-        margin: 1rem;
-    }
+body, body * {
+    padding: 1rem;
+    margin: 1rem;
 }
