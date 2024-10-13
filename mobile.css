@@ -1,5 +1,10 @@
 @media screen and (max-width: 1080px) {
     * {
-        font-size: 1.5vmin;
+        font-size: 3vmin;
+    }
+
+    body, body * {
+        padding: 1rem;
+        margin: 1rem;
     }
 }
