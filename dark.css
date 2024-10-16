@@ -15,10 +15,6 @@
         background-color: black;
     }
 
-    a:hover {
-        background-color: hsl(240, 20%, 20%);
-    }
-
     ::-moz-selection {
         color: hsl(240, 20%, 20%);
         background: hsl(240, 80%, 80%);
@@ -42,10 +38,6 @@
 
     body {
         background-color: white;
-    }
-
-    a:hover {
-        background-color: hsl(240, 80%, 80%);
     }
 
     ::-moz-selection {
