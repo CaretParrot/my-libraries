@@ -47,7 +47,8 @@
                 color: Black;
             }
 
-            #black, #white {
+            #black,
+            #white {
                 grid-area: span 1 / span 4;
             }
         </style>
@@ -111,7 +112,7 @@
         <script>
             window.onload = function () {
                 const buttons = document.getElementsByTagName("button");
-                
+
                 buttons[0].style.backgroundColor = colorPalletes.red[10];
                 buttons[1].style.backgroundColor = colorPalletes.red[20];
                 buttons[2].style.backgroundColor = colorPalletes.red[80];
@@ -237,7 +238,7 @@
                 }
             }
 
-            onkeydown = function(event) {
+            onkeydown = function (event) {
                 if (event.key === " ") {
                     colorPalletes.paint("red", true);
                 }
