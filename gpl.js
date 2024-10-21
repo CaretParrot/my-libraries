@@ -7,6 +7,18 @@ let textNode;
 let newAttribute;
 let idTree;
 let classTree;
+let vw = window.innerWidth / 100;
+let vh = window.innerHeight / 100;
+
+function changePage(pageId, pageClass) {
+    allPages = document.getElementsByClassName(pageClass);
+    for (let i = 0; i < allPages.length; i++) {
+        allPages[i].style.display = "none";
+        document.getElementById(pageId).classList.remove("open");
+    }
+    document.getElementById(pageId).style.display = "initial";
+    document.getElementById(pageId).classList.add("open");
+ }
 
 function slideShow(element, slidesHTML, triggerKey, triggerMouse) {
     p = 0;
@@ -118,5 +130,3 @@ function randomCardName() {
     return `${randomCardNumber} of ${randomSuit}`;
 }
 
-let vw = window.innerWidth / 100;
-let vh = window.innerHeight / 100;
