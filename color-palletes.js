@@ -73,11 +73,19 @@ const colorPalletes = {
         80: `hsl(330, 80%, 80%)`,
         90: `hsl(330, 90%, 90%)`
     },
+    query: window.matchMedia("prefers-color-scheme: dark"),
     paint: function (color) {
-        let query = window.matchMedia("prefers-color-scheme: dark");
         let allElements = document.querySelectorAll("*");
         let activeElements = document.getElementsByClassName("active");
+        
+        updateColors();
 
+        query.onchange = function () {
+            updateColors();
+        }
+        
+    },
+    updateColors: function () {
         if (query.matches) {
             for (let i = 0; i < allElements.length; i++) {
                 allElements[i].style.color = `hsl(${color}, 90%, 90%)`;
