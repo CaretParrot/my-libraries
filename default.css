@@ -6,7 +6,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    * {
+    * :not(.noPaint) {
         color: hsl(240, 90%, 90%);
         background-color: hsl(240, 10%, 10%);
     }
@@ -31,7 +31,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    * {
+    * :not(.noPaint) {
         color: hsl(240, 10%, 10%);
         background-color: hsl(240, 90%, 90%);
     }

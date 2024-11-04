@@ -73,8 +73,11 @@ const colorPalletes = {
         80: `hsl(330, 80%, 80%)`,
         90: `hsl(330, 90%, 90%)`
     },
-    query: window.matchMedia("prefers-color-scheme: dark"),
-    updateColors: function () {
+    query: window.matchMedia("(prefers-color-scheme: dark)"),
+    updateColors: function (color) {
+        let allElements = document.querySelectorAll("* :not(.noPaint)");
+        let activeElements = document.getElementsByClassName("active");
+        colorPalletes.query = window.matchMedia("(prefers-color-scheme: dark)");
         if (colorPalletes.query.matches) {
             for (let i = 0; i < allElements.length; i++) {
                 allElements[i].style.color = `hsl(${color}, 90%, 90%)`;
@@ -83,7 +86,8 @@ const colorPalletes = {
             for (let i = 0; i < activeElements.length; i++) {
                 activeElements[i].style.backgroundColor = `hsl(${color}, 20%, 20%)`;
             }
-            document.body.backgroundColor = "black";
+            document.body.style.backgroundColor = "black";
+            document.documentElement.style.backgroundColor = "transparent";
         } else {
             for (let i = 0; i < allElements.length; i++) {
                 allElements[i].style.color = `hsl(${color}, 10%, 10%)`;
@@ -92,18 +96,16 @@ const colorPalletes = {
             for (let i = 0; i < activeElements.length; i++) {
                 activeElements[i].style.backgroundColor = `hsl(${color}, 80%, 80%)`;
             }
-            document.body.backgroundColor = "white";
+            document.body.style.backgroundColor = "white";
+            document.documentElement.style.backgroundColor = "transparent";
         }
     },
     paint: function (color) {
-        let allElements = document.querySelectorAll("*");
-        let activeElements = document.getElementsByClassName("active");
-
-        updateColors();
+        colorPalletes.updateColors(color);
 
         colorPalletes.query.onchange = function () {
-            updateColors();
-        }
+            colorPalletes.updateColors(color);
+        } 
     }
 }
 
