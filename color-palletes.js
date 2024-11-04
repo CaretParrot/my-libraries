@@ -74,17 +74,6 @@ const colorPalletes = {
         90: `hsl(330, 90%, 90%)`
     },
     query: window.matchMedia("prefers-color-scheme: dark"),
-    paint: function (color) {
-        let allElements = document.querySelectorAll("*");
-        let activeElements = document.getElementsByClassName("active");
-
-        updateColors();
-
-        colorPalletes.query.onchange = function () {
-            updateColors();
-        }
-        
-    },
     updateColors: function () {
         if (colorPalletes.query.matches) {
             for (let i = 0; i < allElements.length; i++) {
@@ -104,6 +93,16 @@ const colorPalletes = {
                 activeElements[i].style.backgroundColor = `hsl(${color}, 80%, 80%)`;
             }
             document.body.backgroundColor = "white";
+        }
+    },
+    paint: function (color) {
+        let allElements = document.querySelectorAll("*");
+        let activeElements = document.getElementsByClassName("active");
+
+        updateColors();
+
+        colorPalletes.query.onchange = function () {
+            updateColors();
         }
     }
 }
