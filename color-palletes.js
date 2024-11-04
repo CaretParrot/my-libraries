@@ -77,16 +77,16 @@ const colorPalletes = {
     paint: function (color) {
         let allElements = document.querySelectorAll("*");
         let activeElements = document.getElementsByClassName("active");
-        
+
         updateColors();
 
-        query.onchange = function () {
+        colorPalletes.query.onchange = function () {
             updateColors();
         }
         
     },
     updateColors: function () {
-        if (query.matches) {
+        if (colorPalletes.query.matches) {
             for (let i = 0; i < allElements.length; i++) {
                 allElements[i].style.color = `hsl(${color}, 90%, 90%)`;
                 allElements[i].style.backgroundColor = `hsl(${color}, 10%, 10%)`;
