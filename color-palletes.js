@@ -73,34 +73,29 @@ const colorPalletes = {
         80: `hsl(330, 80%, 80%)`,
         90: `hsl(330, 90%, 90%)`
     },
-    paint: function (color, darkMode) {
-        let backgroundShade1;
-        let backgroundShade2;
-        let textShade1;
-        let textShade2;
+    paint: function (color) {
+        let query = window.matchMedia("prefers-color-scheme: dark");
+        let allElements = document.querySelectorAll("*");
+        let activeElements = document.getElementsByClassName("active");
 
-        if (darkMode) {
-            backgroundShade1 = 10;
-            backgroundShade2 = 20;
-            textShade1 = 90;
-            textShade2 = 80;
+        if (query.matches) {
+            for (let i = 0; i < allElements.length; i++) {
+                allElements[i].style.color = `hsl(${color}, 90%, 90%)`;
+                allElements[i].style.backgroundColor = `hsl(${color}, 10%, 10%)`;
+            }
+            for (let i = 0; i < activeElements.length; i++) {
+                activeElements[i].style.backgroundColor = `hsl(${color}, 20%, 20%)`;
+            }
+            document.body.backgroundColor = "black";
         } else {
-            backgroundShade1 = 90;
-            backgroundShade2 = 80;
-            textShade1 = 10;
-            textShade2 = 20;
-        }
-
-        let allElements = document.querySelectorAll(":not(body, script, html, .noPaint)");
-        for (let i = 0; i < allElements.length; i++) {
-            allElements[i].style.backgroundColor = colorPalletes[color][10];
-            allElements[i].style.color = colorPalletes[color][90];
-        }
-
-        if (darkMode) {
-            document.body.style.backgroundColor = "Black";
-        } else {
-            document.body.style.backgroundColor = "White";
+            for (let i = 0; i < allElements.length; i++) {
+                allElements[i].style.color = `hsl(${color}, 10%, 10%)`;
+                allElements[i].style.backgroundColor = `hsl(${color}, 90%, 90%)`;
+            }
+            for (let i = 0; i < activeElements.length; i++) {
+                activeElements[i].style.backgroundColor = `hsl(${color}, 80%, 80%)`;
+            }
+            document.body.backgroundColor = "white";
         }
     }
 }

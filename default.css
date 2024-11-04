@@ -16,17 +16,17 @@
     }
 
     ::-moz-selection {
-        color: hsl(240, 20%, 20%);
-        background: hsl(240, 80%, 80%);
+        color: hsl(240, 0%, 20%);
+        background: hsl(240, 0%, 80%);
     }
 
     ::selection {
-        color: hsl(240, 20%, 20%);
-        background: hsl(240, 80%, 80%);
+        color: hsl(240, 0%, 20%);
+        background: hsl(240, 0%, 80%);
     }
 
     .active {
-        background: hsl(240, 20%, 20%);
+        background-color: hsl(240, 20%, 20%);
     }
 }
 
@@ -41,17 +41,17 @@
     }
 
     ::-moz-selection {
-        color: hsl(240, 80%, 80%);
-        background: hsl(240, 20%, 20%);
+        color: hsl(240, 0%, 80%);
+        background: hsl(240, 0%, 20%);
     }
 
     ::selection {
-        color: hsl(240, 80%, 80%);
-        background: hsl(240, 20%, 20%);
+        color: hsl(240, 0%, 80%);
+        background: hsl(240, 0%, 20%);
     }
 
     .active {
-        background: hsl(240, 80%, 80%);
+        background-color: hsl(240, 80%, 80%);
     }
 }
 
