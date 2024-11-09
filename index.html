@@ -25,6 +25,10 @@
                 display: flex;
             }
 
+            body {
+                background-color: hsl(240, 10%, 10%) !important;
+            }
+
             html {
                 height: auto;
                 width: auto;
@@ -142,7 +146,9 @@
                 }
 
                 document.getElementById("black").style.backgroundColor = "black";
+                buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("black").style.backgroundColor}")`);
                 document.getElementById("white").style.backgroundColor = "white";
+                buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("white").style.backgroundColor}")`);
             }
 
             onkeydown = function (event) {
