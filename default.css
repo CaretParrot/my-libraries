@@ -8,11 +8,11 @@
 @media (prefers-color-scheme: dark) {
     * :not(.noPaint) {
         color: hsl(240, 90%, 90%);
-        background-color: hsl(240, 10%, 10%);
+        background-color: hsl(240, 20%, 20%);
     }
 
     body {
-        background-color: black;
+        background-color: hsl(240, 10%, 10%);
     }
 
     ::-moz-selection {
@@ -26,18 +26,18 @@
     }
 
     .active {
-        background-color: hsl(240, 20%, 20%);
+        background-color: hsl(240, 30%, 30%);
     }
 }
 
 @media (prefers-color-scheme: light) {
     * :not(.noPaint) {
         color: hsl(240, 10%, 10%);
-        background-color: hsl(240, 90%, 90%);
+        background-color: hsl(240, 80%, 80%);
     }
 
     body {
-        background-color: white;
+        background-color: hsl(240, 90%, 90%);
     }
 
     ::-moz-selection {
@@ -51,7 +51,7 @@
     }
 
     .active {
-        background-color: hsl(240, 80%, 80%);
+        background-color: hsl(240, 70%, 70%);
     }
 }
 
