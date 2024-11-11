@@ -45,6 +45,11 @@ const randomColor = {
 
         for (let k = 0; k < this.elements.length; k++) {
             this.elements[k].style.backgroundColor = `hsl(${this.randomHue}, ${elementsShade}%, ${elementsShade}%)`;
+            if (elementsShade < 50) {
+                this.elements[k].style.color = `hsl(${this.randomHue}, 90%, 90%)`;
+            } else {
+                this.elements[k].style.color = `hsl(${this.randomHue}, 10%, 10%)`;
+            }
         }
         document.body.style.backgroundColor = `hsl(${this.randomHue}, ${backgroundShade}%, ${backgroundShade}%)`;
         document.documentElement.style.backgroundColor = "transparent";
