@@ -7,51 +7,26 @@
 
 @media (prefers-color-scheme: dark) {
     body * :not(.noPaint) {
-        color: hsl(240, 90%, 90%);
-        background-color: hsl(240, 20%, 20%);
+        color: light-dark(hsl(240, 10%, 10%), hsl(240, 90%, 90%));
+        background-color: light-dark(hsl(240, 90%, 90%), hsl(240, 20%, 20%));
     }
 
     body {
-        background-color: hsl(240, 10%, 10%);
+        background-color: light-dark(hsl(240, 90%, 90%), hsl(240, 10%, 10%));
     }
 
     ::-moz-selection {
-        color: hsl(240, 0%, 20%);
-        background: hsl(240, 0%, 80%);
+        background-color: light-dark(hsl(240, 0%, 80%), hsl(240, 0%, 20%));
+        background-color: light-dark(hsl(240, 0%, 20%), hsl(240, 0%, 80%));
     }
 
     ::selection {
-        color: hsl(240, 0%, 20%);
-        background: hsl(240, 0%, 80%);
+        background-color: light-dark(hsl(240, 0%, 80%), hsl(240, 0%, 20%));
+        background-color: light-dark(hsl(240, 0%, 20%), hsl(240, 0%, 80%));
     }
 
     .active {
-        background-color: hsl(240, 30%, 30%);
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    body * :not(.noPaint) {
-        color: hsl(240, 10%, 10%);
-        background-color: hsl(240, 80%, 80%);
-    }
-
-    body {
-        background-color: hsl(240, 90%, 90%);
-    }
-
-    ::-moz-selection {
-        color: hsl(240, 0%, 80%);
-        background: hsl(240, 0%, 20%);
-    }
-
-    ::selection {
-        color: hsl(240, 0%, 80%);
-        background: hsl(240, 0%, 20%);
-    }
-
-    .active {
-        background-color: hsl(240, 70%, 70%);
+        background-color: light-dark(hsl(240, 70%, 70%), hsl(240, 30%, 30%));
     }
 }
 
