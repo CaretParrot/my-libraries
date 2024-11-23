@@ -15,12 +15,12 @@ body {
 }
 
 ::-moz-selection {
-    background-color: light-dark(hsl(240, 0%, 80%), hsl(240, 0%, 20%));
+    color: light-dark(hsl(240, 0%, 80%), hsl(240, 0%, 20%));
     background-color: light-dark(hsl(240, 0%, 20%), hsl(240, 0%, 80%));
 }
 
 ::selection {
-    background-color: light-dark(hsl(240, 0%, 80%), hsl(240, 0%, 20%));
+    color: light-dark(hsl(240, 0%, 80%), hsl(240, 0%, 20%));
     background-color: light-dark(hsl(240, 0%, 20%), hsl(240, 0%, 80%));
 }
 
