@@ -3,29 +3,35 @@
 
 :root {
     color-scheme: light dark;
+    --dark-1: hsl(240, 8%, 8%);
+    --dark-2: hsl(240, 16%, 16%);
+    --dark-3: hsl(240, 24%, 24%);
+    --light-1: hsl(240, 92%, 92%);
+    --light-2: hsl(240, 84%, 84%);
+    --light-3: hsl(240, 76%, 76%);
 }
 
 body * :not(.noPaint) {
-    color: light-dark(hsl(240, 15%, 15%), hsl(240, 85%, 85%));
-    background-color: light-dark(hsl(240, 85%, 85%), hsl(240, 15%, 15%));
+    color: light-dark(var(--dark-2), var(--light-2));
+    background-color: light-dark(var(--light-2), var(--dark-2));
 }
 
 body {
-    background-color: light-dark(hsl(240, 90%, 90%), hsl(240, 10%, 10%));
+    background-color: light-dark(var(--light-1), var(--dark-1));
 }
 
 ::-moz-selection {
-    color: light-dark(hsl(240, 85%, 85%), hsl(240, 15%, 15%));
-    background-color: light-dark(hsl(240, 15%, 15%), hsl(240, 85%, 85%));
+    color: light-dark(var(--light-2), var(--dark-2));
+    background-color: light-dark(var(--dark-2), var(--light-2));
 }
 
 ::selection {
-    color: light-dark(hsl(240, 85%, 85%), hsl(240, 15%, 15%));
-    background-color: light-dark(hsl(240, 15%, 15%), hsl(240, 85%, 85%));
+    color: light-dark(var(--light-2), var(--dark-2));
+    background-color: light-dark(var(--dark-2), var(--light-2));
 }
 
 .active {
-    background-color: light-dark(hsl(240, 80%, 80%), hsl(240, 20%, 20%)) !important;
+    background-color: light-dark(var(--light-3), var(--dark-3)) !important;
 }
 
 * {
