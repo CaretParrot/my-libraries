@@ -56,7 +56,7 @@
             }
         </style>
         <script defer src="./color-palletes.js"></script>
-        <script defer src="./physics.js"></script>
+        <script src="./math-plus.js"></script>
     </head>
 
     <body>
@@ -143,12 +143,12 @@
                         buttons[i].style.color = `hsl(${hue}, 10%, 10%)`;
                     }
                     buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${buttons[i].style.backgroundColor}")`);
-                }
 
-                document.getElementById("black").style.backgroundColor = "black";
-                buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("black").style.backgroundColor}")`);
-                document.getElementById("white").style.backgroundColor = "white";
-                buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("white").style.backgroundColor}")`);
+                    document.getElementById("black").style.backgroundColor = "black";
+                    document.getElementById("white").style.backgroundColor = "white";
+                    document.getElementById("black").setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("black").style.backgroundColor}")`);
+                    document.getElementById("white").setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("white").style.backgroundColor}")`);
+                }
             }
 
             onkeydown = function (event) {
@@ -156,6 +156,9 @@
                     colorPalletes.paint(120);
                 }
             }
+
+            const newFunction = new MathFunction("x**2", "x");
+            console.log(newFunction.derivative(3));
         </script>
     </body>
 

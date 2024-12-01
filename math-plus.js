@@ -112,7 +112,7 @@ let mathPlus = {
         return total;
     },
     roundToPlaces: function (number) {
-        if (number > 0) {
+        if (Math.abs(number) > 0) {
             return Math.round(number * (10 ** mathPlus.settings.rounding)) / (10 ** mathPlus.settings.rounding);
         } else {
             return number;
@@ -346,10 +346,12 @@ function random(x) {
     return Math.random(x);
 }
 
-function MathFunction(output, input, variable) {
+function MathFunction(expression, variable) {
     this.evaluate = function (inputVal) {
-        let replaceMethod = new RegExp(variable, "g");
-        let evaluatedOutput = Function(`return ${input.replace(replaceMethod, inputVal)};`)();
-        return mathPlus.roundToPlaces(evaluatedOutput);
+        return mathPlus.roundToPlaces(Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)());
+    }
+    this.derivative = function (inputVal) {
+        const inputDifference = 10 ** -3;
+        return mathPlus.roundToPlaces(this.evaluate(inputVal + inputDifference) - this.evaluate(inputVal)) / inputDifference;
     }
 }
