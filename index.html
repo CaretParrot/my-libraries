@@ -56,7 +56,6 @@
             }
         </style>
         <script defer src="./color-palletes.js"></script>
-        <script src="./math-plus.js"></script>
     </head>
 
     <body>
@@ -112,6 +111,7 @@
             <button id="black">Black</button>
             <button id="white">White</button>
         </div>
+        <script src="./math-plus.js"></script>
         <script>
             window.onload = function () {
                 const buttons = document.getElementsByTagName("button");
@@ -157,8 +157,8 @@
                 }
             }
 
-            const newFunction = new MathFunction("x**2", "x");
-            console.log(newFunction.derivative(3));
+            const newFunction = new MathFunction("(x)**2", "x");
+            console.log(newFunction.integral(-1, 1));
         </script>
     </body>
 
