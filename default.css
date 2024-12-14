@@ -89,8 +89,7 @@ h6 {
     font-family: "Poppins", serif;
     font-weight: 500;
     font-style: normal;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
 p {
@@ -110,18 +109,6 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-}
-
-.full-width {
-    width: calc(100% - 2vw);
-}
-
-.full-height {
-    height: calc(100% - 2vh);
-}
-
-.extra-bottom-margin {
-    margin-bottom: 1rem;
 }
 
 @keyframes slideIn {
@@ -145,9 +132,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 a {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
     text-decoration: none;
     font-weight: bold;
 }
@@ -156,13 +140,4 @@ div {
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-.noto-sans {
-    font-family: "Noto Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
 }
