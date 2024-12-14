@@ -376,8 +376,5 @@ function MathFunction(expression, variable) {
         } else {
             return 0;
         }
-        
-
-        
     }
 }
