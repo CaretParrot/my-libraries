@@ -139,9 +139,3 @@ div {
     margin: 0;
     display: flex;
 }
-
-@media (pointer: coarse) {
-    html {
-        font-size: 200%;
-    }
-}
