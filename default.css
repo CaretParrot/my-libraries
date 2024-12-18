@@ -9,6 +9,7 @@
     --light-1: hsl(240, 92%, 92%);
     --light-2: hsl(240, 84%, 84%);
     --light-3: hsl(240, 76%, 76%);
+    --base: 1rem;
 }
 
 body * :not(.noPaint) {
@@ -36,18 +37,17 @@ body {
 
 * {
     font-family: "Noto Sans", sans-serif;
-    border-radius: 1rem;
+    border-radius: var(--base);
     border: none;
-    margin: 1rem;
-    padding: 1rem;
-    font-size: 1rem;
+    margin: var(--base);
+    padding: var(--base);
+    font-size: var(--base);
     outline: none;
     box-sizing: border-box;
     transition: 0.5s;
     scrollbar-width: none;
     -ms-overflow-style: none;
     justify-content: center;
-    line-height: 1.5em;
     flex: 1 1 auto;
 }
 
@@ -72,11 +72,11 @@ body * :not(script) {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: calc(var(--base) * 3);
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: calc(var(--base) * 2);
 }
 
 h1,
@@ -139,4 +139,10 @@ div {
     padding: 0;
     margin: 0;
     display: flex;
+}
+
+@media (pointer: coarse) {
+    html {
+        font-size: 4vmin;
+    }
 }
