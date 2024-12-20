@@ -12,8 +12,8 @@
 }
 
 body * :not(.noPaint, script) {
-    color: light-dark(var(--dark-2), var(--light-2));
-    background-color: light-dark(var(--light-2), var(--dark-2));
+    color: light-dark(var(--dark-2), var(--light-2)) !important;
+    background-color: light-dark(var(--light-2), var(--dark-2)) !important;
 }
 
 body {
