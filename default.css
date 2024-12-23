@@ -16,10 +16,6 @@ body * :not(.noPaint) {
     background-color: light-dark(var(--light-2), var(--dark-2));
 }
 
-body {
-    background-color: light-dark(var(--light-1), var(--dark-1));
-}
-
 ::-moz-selection {
     color: light-dark(var(--light-2), var(--dark-2));
     background-color: light-dark(var(--dark-2), var(--light-2));
@@ -60,10 +56,12 @@ html {
 }
 
 body {
+    background-color: light-dark(var(--light-1), var(--dark-1));
     margin: 0;
     width: 100%;
     height: 100%;
-    flex-flow: column nowrap;
+    display: grid;
+    grid: auto / auto;
 }
 
 body * :not(script) {
@@ -137,5 +135,5 @@ a {
 div {
     padding: 0;
     margin: 0;
-    display: flex;
+    display: grid;
 }
