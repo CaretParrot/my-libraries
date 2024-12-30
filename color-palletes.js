@@ -1,37 +1,11 @@
 const colorPalletes = {
-    query: window.matchMedia("(prefers-color-scheme: dark)"),
-    updateColors: function (color) {
-        let allElements = document.querySelectorAll("* :not(.noPaint)");
-        let activeElements = document.getElementsByClassName("active");
-        colorPalletes.query = window.matchMedia("(prefers-color-scheme: dark)");
-        if (colorPalletes.query.matches) {
-            for (let i = 0; i < allElements.length; i++) {
-                allElements[i].style.color = `hsl(${color}, 90%, 90%)`;
-                allElements[i].style.backgroundColor = `hsl(${color}, 10%, 10%)`;
-            }
-            for (let i = 0; i < activeElements.length; i++) {
-                activeElements[i].style.backgroundColor = `hsl(${color}, 20%, 20%)`;
-            }
-            document.body.style.backgroundColor = "black";
-            document.documentElement.style.backgroundColor = "transparent";
-        } else {
-            for (let i = 0; i < allElements.length; i++) {
-                allElements[i].style.color = `hsl(${color}, 10%, 10%)`;
-                allElements[i].style.backgroundColor = `hsl(${color}, 90%, 90%)`;
-            }
-            for (let i = 0; i < activeElements.length; i++) {
-                activeElements[i].style.backgroundColor = `hsl(${color}, 80%, 80%)`;
-            }
-            document.body.style.backgroundColor = "white";
-            document.documentElement.style.backgroundColor = "transparent";
-        }
-    },
     paint: function (color) {
-        colorPalletes.updateColors(color);
-
-        colorPalletes.query.onchange = function () {
-            colorPalletes.updateColors(color);
-        } 
+        document.documentElement.style.setProperty(`--dark-1`, `hsl(${color}, 10%, 10%)`);
+        document.documentElement.style.setProperty(`--dark-2`, `hsl(${color}, 15%, 15%)`);
+        document.documentElement.style.setProperty(`--dark-3`, `hsl(${color}, 25%, 25%)`);
+        document.documentElement.style.setProperty(`--light-1`, `hsl(${color}, 90%, 90%)`);
+        document.documentElement.style.setProperty(`--light-2`, `hsl(${color}, 80%, 80%)`);
+        document.documentElement.style.setProperty(`--light-3`, `hsl(${color}, 75%, 75%)`);
     }
 }
 
