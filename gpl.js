@@ -129,4 +129,3 @@ function randomCardName() {
 
     return `${randomCardNumber} of ${randomSuit}`;
 }
-
