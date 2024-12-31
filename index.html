@@ -45,6 +45,7 @@
             }
         </style>
         <script defer src="./color-palletes.js"></script>
+        <script defer src="./math-plus.js"></script>
     </head>
 
     <body>
@@ -100,8 +101,8 @@
             <button id="black">Black</button>
             <button id="white">White</button>
         </div>
-        <script src="./math-plus.js"></script>
         <script>
+            let myFunction;
             window.onload = function () {
                 const buttons = document.getElementsByTagName("button");
                 let strength;
@@ -137,7 +138,12 @@
                     document.getElementById("white").style.backgroundColor = "white";
                     document.getElementById("black").setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("black").style.backgroundColor}")`);
                     document.getElementById("white").setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("white").style.backgroundColor}")`);
+                    
+                    
                 }
+
+                myFunction = new mathPlus.MathFunction("(x)**2+2*x+1", "x");
+                console.log(myFunction.integral(-2, 10));
             }
 
             onkeydown = function (event) {
@@ -145,6 +151,8 @@
                     randomColor.paint();
                 }
             }
+
+            
         </script>
     </body>
 

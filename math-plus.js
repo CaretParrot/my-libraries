@@ -124,6 +124,37 @@ let mathPlus = {
     },
     toRadians: function (number) {
         return number * Math.PI / 180;
+    },
+    MathFunction: function (expression, variable) {
+        this.evaluate = function (inputVal, rounded = true) {
+            if (rounded) {
+                return mathPlus.roundToPlaces(Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)());
+            } else {
+                return Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)();
+            }
+        }
+        this.derivative = function (inputVal) {
+            return mathPlus.roundToPlaces((this.evaluate(inputVal + mathPlus.settings.dx, false) - this.evaluate(inputVal, false)) / mathPlus.settings.dx);
+        }
+        this.integral = function (lowerBound, upperBound) {
+            let sum = 0;
+
+            if (lowerBound < upperBound) {
+                for (i = lowerBound; i <= upperBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
+                    sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
+                }
+
+                return mathPlus.roundToPlaces(sum);
+            } else if (lowerBound > upperBound) {
+                for (i = upperBound; i <= lowerBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
+                    sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
+                }
+
+                return -mathPlus.roundToPlaces(sum);
+            } else {
+                return 0;
+            }
+        }
     }
 }
 
@@ -345,36 +376,4 @@ function ceil(x) {
 
 function random(x) {
     return Math.random(x);
-}
-
-function MathFunction(expression, variable) {
-    this.evaluate = function (inputVal, rounded = true) {
-        if (rounded) {
-            return mathPlus.roundToPlaces(Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)());
-        } else {
-            return Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)();
-        }
-    }
-    this.derivative = function (inputVal) {
-        return mathPlus.roundToPlaces((this.evaluate(inputVal + mathPlus.settings.dx, false) - this.evaluate(inputVal, false)) / mathPlus.settings.dx);
-    }
-    this.integral = function (lowerBound, upperBound) {
-        let sum = 0;
-
-        if (lowerBound < upperBound) {
-            for (i = lowerBound; i <= upperBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
-                sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
-            }
-
-            return mathPlus.roundToPlaces(sum);
-        } else if (lowerBound < upperBound) {
-            for (i = upperBound; i <= lowerBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
-                sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
-            }
-
-            return -mathPlus.roundToPlaces(sum);
-        } else {
-            return 0;
-        }
-    }
 }
