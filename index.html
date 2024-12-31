@@ -9,12 +9,7 @@
         <link rel="icon" href="./Profile%20Picture.png">
         <style>
             div {
-                display: grid;
-                grid: auto / auto auto auto auto auto auto auto auto;
-                background-color: transparent;
-                margin: 0;
-                padding: 0;
-                height: 100%;
+                grid: auto / auto auto auto auto;
                 width: calc(100% - 2rem);
                 height: calc(100% - 2rem);
                 justify-content: stretch;
@@ -123,23 +118,21 @@
                             strength = 80;
                             break;
                     }
+
                     if (i % 4 === 0) {
                         hue += 30;
                     }
+
                     buttons[i].style.backgroundColor = `hsl(${hue}, ${strength}%, ${strength}%)`;
                     if (strength < 50) {
                         buttons[i].style.color = `hsl(${hue}, 90%, 90%)`;
                     } else {
                         buttons[i].style.color = `hsl(${hue}, 10%, 10%)`;
                     }
-                    buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${buttons[i].style.backgroundColor}")`);
 
-                    document.getElementById("black").style.backgroundColor = "black";
-                    document.getElementById("white").style.backgroundColor = "white";
+                    buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${buttons[i].style.backgroundColor}")`);
                     document.getElementById("black").setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("black").style.backgroundColor}")`);
                     document.getElementById("white").setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("white").style.backgroundColor}")`);
-                    
-                    
                 }
 
                 myFunction = new mathPlus.MathFunction("(x)**2+2*x+1", "x");
@@ -150,9 +143,7 @@
                 if (event.key === " ") {
                     randomColor.paint();
                 }
-            }
-
-            
+            } 
         </script>
     </body>
 

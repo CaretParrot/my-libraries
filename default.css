@@ -3,12 +3,12 @@
 
 :root {
     color-scheme: light dark;
-    --dark-1: hsl(240, 10%, 10%);
-    --dark-2: hsl(240, 15%, 15%);
-    --dark-3: hsl(240, 25%, 25%);
-    --light-1: hsl(240, 90%, 90%);
-    --light-2: hsl(240, 85%, 85%);
-    --light-3: hsl(240, 75%, 75%);
+    --dark-1: hsl(240, 5%, 10%);
+    --dark-2: hsl(240, 10%, 20%);
+    --dark-3: hsl(240, 15%, 30%);
+    --light-1: hsl(240, 45%, 90%);
+    --light-2: hsl(240, 40%, 80%);
+    --light-3: hsl(240, 35%, 70%);
 }
 
 body * :not(.noPaint) {
