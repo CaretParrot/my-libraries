@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
     <head>
@@ -7,144 +8,9 @@
         <title>My Libraries</title>
         <link rel="stylesheet" href="./default.css">
         <link rel="icon" href="./Profile%20Picture.png">
-        <style>
-            div {
-                grid: auto / auto auto auto auto;
-                width: calc(100% - 2rem);
-                height: calc(100% - 2rem);
-                justify-content: stretch;
-                align-content: stretch;
-                align-items: stretch;
-            }
-
-            button {
-                width: 100%;
-                height: 100%;
-                border-radius: 0;
-                padding: 0;
-            }
-
-            #black {
-                background-color: Black !important;
-                color: White !important;
-            }
-
-            #white {
-                background-color: White !important;
-                color: Black !important;
-            }
-
-            #black,
-            #white {
-                grid-area: span 1 / span 2;
-            }
-        </style>
-        <script defer src="./color-palletes.js"></script>
-        <script defer src="./math-plus.js"></script>
     </head>
 
     <body>
-        <div class="noPaint">
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button>20</button>
-            <button>30</button>
-            <button>70</button>
-            <button>80</button>
-            <button id="black">Black</button>
-            <button id="white">White</button>
-        </div>
-        <script>
-            let myFunction;
-            window.onload = function () {
-                const buttons = document.getElementsByTagName("button");
-                let strength;
-                let hue = -30;
-
-                for (let i = 0; i < buttons.length; i++) {
-                    switch (i % 4) {
-                        case 0:
-                            strength = 20;
-                            break;
-                        case 1:
-                            strength = 30;
-                            break;
-                        case 2:
-                            strength = 70;
-                            break;
-                        case 3:
-                            strength = 80;
-                            break;
-                    }
-
-                    if (i % 4 === 0) {
-                        hue += 30;
-                    }
-
-                    buttons[i].style.backgroundColor = `hsl(${hue}, ${strength}%, ${strength}%)`;
-                    if (strength < 50) {
-                        buttons[i].style.color = `hsl(${hue}, 90%, 90%)`;
-                    } else {
-                        buttons[i].style.color = `hsl(${hue}, 10%, 10%)`;
-                    }
-
-                    buttons[i].setAttribute("onclick", `navigator.clipboard.writeText("${buttons[i].style.backgroundColor}")`);
-                    document.getElementById("black").setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("black").style.backgroundColor}")`);
-                    document.getElementById("white").setAttribute("onclick", `navigator.clipboard.writeText("${document.getElementById("white").style.backgroundColor}")`);
-                }
-
-                myFunction = new mathPlus.MathFunction("(x)**2+2*x+1", "x");
-                console.log(myFunction.integral(-2, 10));
-            }
-
-            onkeydown = function (event) {
-                if (event.key === " ") {
-                    randomColor.paint();
-                }
-            } 
-        </script>
+        <button>How does this work</button>
     </body>
-
 </html>

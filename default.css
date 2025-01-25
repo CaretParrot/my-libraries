@@ -10,23 +10,18 @@
     --light-3: hsl(240, 35%, 70%);
 }
 
-body * :not(.noPaint) {
+.active, button:active {
+    background-color: light-dark(var(--light-3), var(--dark-3));
+}
+
+body * {
     color: light-dark(var(--dark-2), var(--light-2));
     background-color: light-dark(var(--light-2), var(--dark-2));
 }
 
-::-moz-selection {
+::-moz-selection, ::selection {
     color: light-dark(var(--light-2), var(--dark-2));
     background-color: light-dark(var(--dark-2), var(--light-2));
-}
-
-::selection {
-    color: light-dark(var(--light-2), var(--dark-2));
-    background-color: light-dark(var(--dark-2), var(--light-2));
-}
-
-.active {
-    background-color: light-dark(var(--light-3), var(--dark-3)) !important;
 }
 
 * {
@@ -46,6 +41,9 @@ body * :not(.noPaint) {
     -ms-overflow-style: none;
     justify-content: center;
     flex: 1 1 auto;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -64,10 +62,6 @@ body {
     height: 100%;
     display: grid;
     grid: auto / 100%;
-}
-
-body * :not(script) {
-    display: flex;
 }
 
 h1 {
@@ -109,26 +103,6 @@ input[type="number"]::-webkit-outer-spin-button {
     appearance: none;
 }
 
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideOut {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(100%);
-    }
-}
-
 a {
     text-decoration: none;
     font-weight: bold;
@@ -137,5 +111,13 @@ a {
 div {
     padding: 0;
     margin: 0;
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
     display: grid;
 }
