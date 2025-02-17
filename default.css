@@ -8,6 +8,7 @@
     --light-1: hsl(240, 45%, 90%);
     --light-2: hsl(240, 40%, 80%);
     --light-3: hsl(240, 35%, 70%);
+    --unit: 1rem;
 }
 
 .active, button:active {
@@ -29,11 +30,11 @@ body * {
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
-    border-radius: 1rem;
+    border-radius: var(--unit);
     border: none;
-    margin: 1rem;
-    padding: 1rem;
-    font-size: 1rem;
+    margin: var(--unit);
+    padding: var(--unit);
+    font-size: var(--unit);
     outline: none;
     box-sizing: border-box;
     transition: 0.5s;
@@ -41,8 +42,6 @@ body * {
     -ms-overflow-style: none;
     justify-content: center;
     flex: 1 1 auto;
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -79,8 +78,6 @@ h4,
 h5,
 h6 {
     font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     text-align: center;
 }
 
