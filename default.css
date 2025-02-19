@@ -122,3 +122,13 @@ div {
 .grid {
     display: grid;
 }
+
+.noBuffer {
+    padding: 0;
+    margin: 0;
+}
+
+.buffer {
+    padding: 1rem;
+    margin: 1rem;
+}
