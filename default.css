@@ -81,6 +81,8 @@ h5,
 h6 {
     font-family: "Roboto Slab", serif;
     text-align: center;
+    align-content: center;
+    align-items: center;
 }
 
 p {
