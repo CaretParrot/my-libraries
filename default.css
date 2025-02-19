@@ -11,7 +11,8 @@
     --unit: 1rem;
 }
 
-.active, button:active {
+.active,
+button:active {
     background-color: light-dark(var(--light-3), var(--dark-3));
 }
 
@@ -20,7 +21,8 @@ body * {
     background-color: light-dark(var(--light-2), var(--dark-2));
 }
 
-::-moz-selection, ::selection {
+::-moz-selection,
+::selection {
     color: light-dark(var(--light-2), var(--dark-2));
     background-color: light-dark(var(--dark-2), var(--light-2));
 }
