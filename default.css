@@ -44,6 +44,7 @@ body * {
     -ms-overflow-style: none;
     justify-content: center;
     flex: 1 1 auto;
+    line-height: 1.5em;
     -webkit-tap-highlight-color: transparent;
 }
 
