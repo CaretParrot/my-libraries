@@ -12,13 +12,30 @@
 }
 
 .active,
-button:active {
+button:active,
+select:active,
+input:focus {
     background-color: light-dark(var(--light-3), var(--dark-3));
 }
 
 body * {
     color: light-dark(var(--dark-2), var(--light-2));
     background-color: light-dark(var(--light-2), var(--dark-2));
+    width: calc(100% - var(--base-unit) * 2);
+    height: calc(100% - var(--base-unit) * 2);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    border: none;
+    border-radius: var(--base-unit);
+    transition: 0.5s;
+    flex: 1 1 auto;
+    text-align: center;
+    line-height: 1.5em;
 }
 
 ::-moz-selection,
@@ -32,24 +49,13 @@ body * {
 }
 
 * {
-    font-family: "Inter", serif;
-    font-optical-sizing: auto;
-    font-weight: normal;
-    font-style: normal;
-    border: none;
-    border-radius: var(--base-unit);
     margin: var(--base-unit);
     padding: var(--base-unit);
     font-size: var(--base-unit);
-    outline: none;
     box-sizing: border-box;
-    transition: 0.5s;
+    outline: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    justify-content: center;
-    flex: 1 1 auto;
-    text-align: center;
-    line-height: 1.5em;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -68,7 +74,7 @@ body {
     width: 100%;
     height: 100%;
     display: grid;
-    grid: auto / 100%;
+    grid: auto / 1fr;
 }
 
 h1 {
@@ -91,12 +97,7 @@ h5,
 h6 {
     font-family: "Roboto Slab", serif;
     text-align: center;
-    align-content: center;
-    align-items: center;
-}
-
-p {
-    justify-content: flex-start;
+    font-weight: bold;
 }
 
 button,
@@ -140,6 +141,11 @@ div {
 }
 
 .buffer {
-    padding: var(--base-unit);
     margin: var(--base-unit);
+    padding: var(--base-unit);
+}
+
+.full-size {
+    width: 100%;
+    height: 100%;
 }
