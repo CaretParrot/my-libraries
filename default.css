@@ -8,7 +8,7 @@
     --light-1: hsl(240, 45%, 90%);
     --light-2: hsl(240, 40%, 80%);
     --light-3: hsl(240, 35%, 70%);
-    --unit: 1rem;
+    --base-unit: 1rem;
 }
 
 .active,
@@ -27,16 +27,20 @@ body * {
     background-color: light-dark(var(--dark-2), var(--light-2));
 }
 
+::placeholder {
+    color: light-dark(var(--light-3), var(--dark-3));
+}
+
 * {
     font-family: "Inter", serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
-    border-radius: var(--unit);
     border: none;
-    margin: var(--unit);
-    padding: var(--unit);
-    font-size: var(--unit);
+    border-radius: var(--base-unit);
+    margin: var(--base-unit);
+    padding: var(--base-unit);
+    font-size: var(--base-unit);
     outline: none;
     box-sizing: border-box;
     transition: 0.5s;
@@ -44,6 +48,7 @@ body * {
     -ms-overflow-style: none;
     justify-content: center;
     flex: 1 1 auto;
+    text-align: center;
     line-height: 1.5em;
     -webkit-tap-highlight-color: transparent;
 }
@@ -72,6 +77,10 @@ h1 {
 
 h2 {
     font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
 }
 
 h1,
@@ -111,9 +120,10 @@ a {
 }
 
 div {
+    display: grid;
+    background-color: transparent;
     padding: 0;
     margin: 0;
-    display: grid;
 }
 
 .flex {
@@ -130,6 +140,6 @@ div {
 }
 
 .buffer {
-    padding: 1rem;
-    margin: 1rem;
+    padding: var(--base-unit);
+    margin: var(--base-unit);
 }
