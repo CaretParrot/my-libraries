@@ -36,6 +36,14 @@ body * {
     flex: 1 1 auto;
     text-align: center;
     line-height: 1.5em;
+    margin: var(--base-unit);
+    padding: var(--base-unit);
+    font-size: var(--base-unit);
+    box-sizing: border-box;
+    outline: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 ::-moz-selection,
@@ -46,17 +54,6 @@ body * {
 
 ::placeholder {
     color: light-dark(var(--light-3), var(--dark-3));
-}
-
-* {
-    margin: var(--base-unit);
-    padding: var(--base-unit);
-    font-size: var(--base-unit);
-    box-sizing: border-box;
-    outline: none;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -71,8 +68,7 @@ html {
 body {
     background-color: light-dark(var(--light-1), var(--dark-1));
     margin: 0;
-    width: 100%;
-    height: 100%;
+    padding: var(--base-unit);
     display: grid;
     grid: auto / 1fr;
 }
@@ -133,19 +129,4 @@ div {
 
 .grid {
     display: grid;
-}
-
-.noBuffer {
-    padding: 0;
-    margin: 0;
-}
-
-.buffer {
-    margin: var(--base-unit);
-    padding: var(--base-unit);
-}
-
-.full-size {
-    width: 100%;
-    height: 100%;
 }
