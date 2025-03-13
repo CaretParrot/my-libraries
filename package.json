@@ -1,0 +1,15 @@
+{
+  "name": "my-libraries",
+  "version": "1.0.0",
+  "description": "The libraries that I have created for personal and public use. Contains a full stylesheet, color palletes, enhanced math functions, and more!",
+  "main": "math-plus.js",
+  "stackblitz": {
+    "startCommand": "npx install http-server"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
