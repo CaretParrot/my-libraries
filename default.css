@@ -21,8 +21,7 @@ input:focus {
 body * {
     color: light-dark(var(--dark-2), var(--light-2));
     background-color: light-dark(var(--light-2), var(--dark-2));
-    width: calc(100% - var(--base-unit) * 2);
-    height: calc(100% - var(--base-unit) * 2);
+    width: calc(100% - 2 * var(--base-unit));
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -39,11 +38,15 @@ body * {
     margin: var(--base-unit);
     padding: var(--base-unit);
     font-size: var(--base-unit);
-    box-sizing: border-box;
     outline: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 ::-moz-selection,
@@ -69,6 +72,7 @@ body {
     background-color: light-dark(var(--light-1), var(--dark-1));
     margin: 0;
     padding: var(--base-unit);
+    width: 100%;
     display: grid;
     grid: auto / 1fr;
 }
@@ -92,7 +96,6 @@ h4,
 h5,
 h6 {
     font-family: "Roboto Slab", serif;
-    text-align: center;
     font-weight: bold;
 }
 
@@ -100,8 +103,6 @@ button,
 select,
 option {
     cursor: pointer;
-    text-align: center;
-    align-items: center;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -112,7 +113,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 a {
-    text-decoration: none;
     font-weight: bold;
 }
 
