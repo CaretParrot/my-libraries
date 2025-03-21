@@ -70,9 +70,9 @@ html {
 
 body {
     background-color: light-dark(var(--light-1), var(--dark-1));
-    margin: 0;
-    padding: var(--base-unit);
-    width: 100%;
+    margin: var(--base-unit);
+    padding: 0;
+    width: calc(100% - 2 * var(--base-unit));
     display: grid;
     grid: auto / 1fr;
 }
