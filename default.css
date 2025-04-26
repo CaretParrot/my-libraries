@@ -8,7 +8,7 @@
     --light-1: hsl(240, 45%, 90%);
     --light-2: hsl(240, 40%, 80%);
     --light-3: hsl(240, 35%, 70%);
-    --base-unit: 1rem;
+    --base-unit: 1vmax;
 }
 
 .active,
@@ -30,14 +30,14 @@ body * {
     font-weight: normal;
     font-style: normal;
     border: none;
-    border-radius: var(--base-unit);
+    border-radius: 1rem;
     transition: 0.5s;
     flex: 1 1 auto;
     text-align: center;
     line-height: 1.5em;
     margin: var(--base-unit);
     padding: var(--base-unit);
-    font-size: var(--base-unit);
+    font-size: 100%;
     outline: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -96,7 +96,6 @@ h4,
 h5,
 h6 {
     font-family: "Roboto Slab", serif;
-    font-weight: bold;
 }
 
 button,
