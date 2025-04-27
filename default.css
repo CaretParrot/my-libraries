@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
 
 :root {
     color-scheme: light dark;
@@ -8,7 +8,7 @@
     --light-1: hsl(240, 45%, 90%);
     --light-2: hsl(240, 40%, 80%);
     --light-3: hsl(240, 35%, 70%);
-    --base-unit: 1vmax;
+    --base-unit: 1rem;
 }
 
 .active,
@@ -30,14 +30,14 @@ body * {
     font-weight: normal;
     font-style: normal;
     border: none;
-    border-radius: 1rem;
+    border-radius: var(--base-unit);
     transition: 0.5s;
     flex: 1 1 auto;
     text-align: center;
     line-height: 1.5em;
     margin: var(--base-unit);
     padding: var(--base-unit);
-    font-size: 100%;
+    font-size: var(--base-unit);
     outline: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -49,8 +49,12 @@ body * {
     box-sizing: border-box;
 }
 
-::-moz-selection,
 ::selection {
+    color: light-dark(var(--light-2), var(--dark-2));
+    background-color: light-dark(var(--dark-2), var(--light-2));
+}
+
+::-moz-selection {
     color: light-dark(var(--light-2), var(--dark-2));
     background-color: light-dark(var(--dark-2), var(--light-2));
 }
@@ -78,15 +82,15 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 h1,
