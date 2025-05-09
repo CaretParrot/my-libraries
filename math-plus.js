@@ -126,6 +126,8 @@ let mathPlus = {
         return number * Math.PI / 180;
     },
     MathFunction: function (expression, variable) {
+        this.expression = expression;
+        this.variable = variable;
         this.evaluate = function (inputVal, rounded = true) {
             if (rounded) {
                 return mathPlus.roundToPlaces(Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)());
@@ -153,6 +155,36 @@ let mathPlus = {
                 return -mathPlus.roundToPlaces(sum);
             } else {
                 return 0;
+            }
+        }
+        this.summation = function (lowerBound, upperBound) {
+            let sum = 0;
+            if (lowerBound >= upperBound) {
+                console.error("Upper bound must be greater than lower bound.");
+                return 0;
+            } else if (lowerBound % 1 !== 0 || upperBound % 1 !== 0) {
+                console.error("Summation bounds must be integers.");
+                return 0;
+            } else {
+                for (let i = lowerBound; i <= upperBound; i++) {
+                    sum += Function(`return ${expression.replace(new RegExp(variable, "g"), i)};`)();
+                }
+                return mathPlus.roundToPlaces(sum);
+            }
+        },
+        this.product = function (lowerBound, upperBound) {
+            let product = 1;
+            if (lowerBound >= upperBound) {
+                console.error("Upper bound must be greater than lower bound.");
+                return 0;
+            } else if (lowerBound % 1 !== 0 || upperBound % 1 !== 0) {
+                console.error("Summation bounds must be integers.");
+                return 0;
+            } else {
+                for (let i = lowerBound; i <= upperBound; i++) {
+                    product *= Function(`return ${expression.replace(new RegExp(variable, "g"), i)};`)();
+                }
+                return mathPlus.roundToPlaces(product);
             }
         }
     }
