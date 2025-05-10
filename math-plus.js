@@ -139,23 +139,28 @@ let mathPlus = {
             return mathPlus.roundToPlaces((this.evaluate(inputVal + mathPlus.settings.dx, false) - this.evaluate(inputVal, false)) / mathPlus.settings.dx);
         }
         this.integral = function (lowerBound, upperBound) {
-            let sum = 0;
+             const integralPromise = new Promise((resolve, reject) => {
+                let sum = 0;
+                if (lowerBound < upperBound) {
+                    for (i = lowerBound; i <= upperBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
+                        sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
+                    }
 
-            if (lowerBound < upperBound) {
-                for (i = lowerBound; i <= upperBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
-                    sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
+                    resolve(mathPlus.roundToPlaces(sum));
+                } else if (lowerBound > upperBound) {
+                    for (i = upperBound; i <= lowerBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
+                        sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
+                    }
+
+                    resolve(-mathPlus.roundToPlaces(sum));
+                } else {
+                    resolve(0);
                 }
+            })
 
-                return mathPlus.roundToPlaces(sum);
-            } else if (lowerBound > upperBound) {
-                for (i = upperBound; i <= lowerBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
-                    sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
-                }
-
-                return -mathPlus.roundToPlaces(sum);
-            } else {
-                return 0;
-            }
+            integralPromise.then((result) => {
+                return result;
+            })
         }
         this.summation = function (lowerBound, upperBound) {
             let sum = 0;
@@ -171,7 +176,7 @@ let mathPlus = {
                 }
                 return mathPlus.roundToPlaces(sum);
             }
-        },
+        }
         this.product = function (lowerBound, upperBound) {
             let product = 1;
             if (lowerBound >= upperBound) {
@@ -409,3 +414,4 @@ function ceil(x) {
 function random(x) {
     return Math.random(x);
 }
+
