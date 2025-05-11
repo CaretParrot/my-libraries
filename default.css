@@ -126,6 +126,7 @@ div {
     background-color: transparent;
     padding: 0;
     margin: 0;
+    grid-gap: var(--base-unit);
 }
 
 .flex {
