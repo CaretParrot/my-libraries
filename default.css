@@ -2,12 +2,14 @@
 
 :root {
     color-scheme: light dark;
-    --dark-1: hsl(240, 5%, 10%);
+    --dark-1: hsl(240, 5%, 15%);
     --dark-2: hsl(240, 10%, 20%);
-    --dark-3: hsl(240, 15%, 30%);
-    --light-1: hsl(240, 45%, 90%);
-    --light-2: hsl(240, 40%, 80%);
-    --light-3: hsl(240, 35%, 70%);
+    --dark-3: hsl(240, 15%, 25%);
+    --light-1: hsl(240, 65%, 75%);
+    --light-2: hsl(240, 70%, 80%);
+    --light-3: hsl(240, 75%, 85%);
+    --dark-placeholder: hsl(240, 10%, 20%, 0.5);
+    --light-placeholder: hsl(240, 70%, 80%, 0.5);
     --base-unit: 1rem;
 }
 
@@ -26,7 +28,7 @@ body * {
     align-items: center;
     font-family: "Inter", "Verdana", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     border: none;
     border-radius: var(--base-unit);
@@ -42,6 +44,8 @@ body * {
     -ms-overflow-style: none;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+    grid: auto / 1fr;
+    flex-flow: row wrap;
 }
 
 * {
@@ -59,7 +63,7 @@ body * {
 }
 
 ::placeholder {
-    color: light-dark(var(--light-3), var(--dark-3));
+    color: light-dark(var(--dark-placeholder), var(--light-placeholder));
 }
 
 html {
@@ -77,16 +81,15 @@ body {
     padding: var(--base-unit);
     width: 100%;
     display: grid;
-    grid: auto / 1fr;
     grid-gap: var(--base-unit);
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h3 {
@@ -109,24 +112,28 @@ option {
     cursor: pointer;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-a {
+a, input {
     font-weight: 700;
 }
 
 div {
-    width: 100%;
     display: grid;
     background-color: transparent;
     padding: 0;
     margin: 0;
     grid-gap: var(--base-unit);
+}
+
+.two-column {
+    grid: auto / 1fr 1fr;
+}
+
+.three-column {
+    grid: auto / 1fr 1fr 1fr;
+}
+
+.four-column {
+    grid: auto / 1fr 1fr 1fr 1fr;
 }
 
 .flex {
@@ -135,4 +142,10 @@ div {
 
 .grid {
     display: grid;
+}
+
+@media (hover: none) {
+    .two-column, .three-column, .four-column {
+        grid: auto / 1fr;
+    }
 }
