@@ -2,14 +2,14 @@
 
 :root {
     color-scheme: light dark;
-    --dark-1: hsl(240, 5%, 15%);
+    --dark-1: hsl(240, 5%, 10%);
     --dark-2: hsl(240, 10%, 20%);
-    --dark-3: hsl(240, 15%, 25%);
-    --light-1: hsl(240, 65%, 75%);
-    --light-2: hsl(240, 70%, 80%);
-    --light-3: hsl(240, 75%, 85%);
+    --dark-3: hsl(240, 15%, 30%);
+    --light-1: hsl(240, 70%, 85%);
+    --light-2: hsl(240, 80%, 90%);
+    --light-3: hsl(240, 90%, 95%);
     --dark-placeholder: hsl(240, 10%, 20%, 0.5);
-    --light-placeholder: hsl(240, 70%, 80%, 0.5);
+    --light-placeholder: hsl(240, 80%, 90%, 0.5);
     --base-unit: 1rem;
 }
 
