@@ -236,6 +236,19 @@ class Vector {
 
         return tempVector;
     }
+
+    slope() {
+        return (this.coords[1][1] - this.coords[0][1]) / (this.coords[1][0] - this.coords[0][0]);
+    }
+
+    angle() {
+        if (mathPlus.settings.degrees) {
+            return mathPlus.toDegrees(Math.atan(this.slope()));
+        } else {
+            return Math.atan(this.slope());
+        }
+        
+    }
 }
 
 class PosVector extends Vector {
@@ -272,224 +285,4 @@ class PosVector extends Vector {
     getVector() {
         return new Vector([0, 0, 0], this.coords);
     }
-}
-
-function sin(x) {
-    if (mathPlus.settings.degrees === true) {
-        return Math.sin(mathPlus.toRadians(x));
-    } else {
-        return Math.sin(x);
-    }
-}
-
-function sinh(x) {
-    if (mathPlus.settings.degrees === true) {
-        return Math.sinh(mathPlus.toRadians(x));
-    } else {
-        return Math.sinh(x);
-    }
-}
-
-function arcsin(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.asin(x));
-    } else {
-        return Math.asin(x);
-    }
-}
-
-function arcsinh(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.asinh(x));
-    } else {
-        return Math.asinh(x);
-    }
-}
-
-function cos(x) {
-    if (mathPlus.settings.degrees === true) {
-        return Math.cos(mathPlus.toRadians(x));
-    } else {
-        return Math.cos(x);
-    }
-}
-
-function cosh(x) {
-    if (mathPlus.settings.degrees === true) {
-        return Math.cosh(mathPlus.toRadians(x));
-    } else {
-        return Math.cosh(x);
-    }
-}
-
-function arccos(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.acos(x));
-    } else {
-        return Math.acos(x);
-    }
-}
-
-function arccosh(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.acosh(x));
-    } else {
-        return Math.acosh(x);
-    }
-}
-
-function tan(x) {
-    if (mathPlus.settings.degrees === true) {
-        return Math.tan(mathPlus.toRadians(x));
-    } else {
-        return Math.tan(x);
-    }
-}
-
-function tanh(x) {
-    if (mathPlus.settings.degrees === true) {
-        return Math.tanh(mathPlus.toRadians(x));
-    } else {
-        return Math.tanh(x);
-    }
-}
-
-function arctan(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.atan(x));
-    } else {
-        return Math.atan(x);
-    }
-}
-
-function arctanh(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.atanh(x));
-    } else {
-        return Math.atanh(x);
-    }
-}
-
-function csc(x) {
-    if (mathPlus.settings.degrees === true) {
-        return 1 / Math.sin(mathPlus.toRadians(x));
-    } else {
-        return 1 / Math.sin(x);
-    }
-}
-
-function csch(x) {
-    if (mathPlus.settings.degrees === true) {
-        return 1 / Math.sinh(mathPlus.toRadians(x));
-    } else {
-        return 1 / Math.sinh(x);
-    }
-}
-
-function arccsc(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.asin(1 / x));
-    } else {
-        return Math.asin(1 / x);
-    }
-}
-
-function arccsc(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.asinh(1 / x));
-    } else {
-        return Math.asinh(1 / x);
-    }
-}
-
-function sec(x) {
-    if (mathPlus.settings.degrees === true) {
-        return 1 / Math.cos(mathPlus.toRadians(x));
-    } else {
-        return 1 / Math.cos(x);
-    }
-}
-
-function sech(x) {
-    if (mathPlus.settings.degrees === true) {
-        return 1 / Math.cosh(mathPlus.toRadians(x));
-    } else {
-        return 1 / Math.cosh(x);
-    }
-}
-
-function arcsec(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.acos(1 / x));
-    } else {
-        return Math.acos(1 / x);
-    }
-}
-
-function arcsec(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.acosh(1 / x));
-    } else {
-        return Math.acosh(1 / x);
-    }
-}
-
-function cot(x) {
-    if (mathPlus.settings.degrees === true) {
-        return 1 / Math.tan(mathPlus.toRadians(x));
-    } else {
-        return 1 / Math.tan(x);
-    }
-}
-
-function coth(x) {
-    if (mathPlus.settings.degrees === true) {
-        return 1 / Math.tanh(mathPlus.toRadians(x));
-    } else {
-        return 1 / Math.tanh(x);
-    }
-}
-
-function arccot(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.PI / 2 - Math.atan(x));
-    } else {
-        return Math.PI / 2 - Math.atan(x);
-    }
-}
-
-function arccoth(x) {
-    if (mathPlus.settings.degrees === true) {
-        return mathPlus.toRadians(Math.atanh(1 / x));
-    } else {
-        return Math.atanh(1 / x);
-    }
-}
-
-function log(x) {
-    return Math.log10(x);
-}
-
-function logb(b, x) {
-    return Math.log(x) / Math.log(b);
-}
-
-function ln(x) {
-    return Math.log(x);
-}
-
-function abs(x) {
-    return Math.abs(x);
-}
-
-function floor(x) {
-    return Math.floor(x);
-}
-
-function ceil(x) {
-    return Math.ceil(x);
-}
-
-function random(x) {
-    return Math.random(x);
 }
