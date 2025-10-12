@@ -189,6 +189,87 @@ let mathPlus = {
     }
 }
 
+class Vector {
+    constructor(tail = [0, 0, 0], tip = [0, 0, 0]) {
+        this.coords = [tail, tip];
+        this.update();
+    }
+
+    update() {
+        if (this.coords[0].length < 3) {
+            for (let i = this.coords[0].length; i < 3; i++) {
+                this.coords[0][i] = 0;
+            }
+        }
+
+        if (this.coords[1].length < 3) {
+            for (let i = this.coords[1].length; i < 3; i++) {
+                this.coords[1][i] = 0;
+            }
+        }
+    }
+
+    getCoords() {
+        return this.coords;
+    }
+
+    setCoords(tail, tip) {
+        this.coords = [tail, tip];
+        this.update();
+    }
+
+    getMagnitude() {
+        return Math.pow((this.coords[1][0] - this.coords[0][0]) ** 2 + (this.coords[1][1] - this.coords[0][1]) ** 2 + (this.coords[1][2] - this.coords[0][2]) ** 2, 1 / 2);
+    }
+
+    getPosVector() {
+        return new PosVector([0, 0, 0], [this.coords[1][0] - this.coords[0][0], this.coords[1][1] - this.coords[0][1], this.coords[1][2] - this.coords[0][2]]);
+    }
+
+    getUnitVector() {
+        let tempVector = this.getPosVector();
+        let magnitude = tempVector.getMagnitude();
+
+        for (let i = 0; i < tempVector.getCoords()[1].length; i++) {
+            tempVector.coords[1][i] /= magnitude;
+        }
+
+        return tempVector;
+    }
+}
+
+class PosVector extends Vector {
+    constructor(tip = [0, 0, 0]) {
+        super();
+        this.coords = tip;
+        this.update();
+    }
+
+    getPosVector() {
+        return this;
+    }
+
+    isPosVector() {
+        return true;
+    }
+
+    update() {
+        if (this.coords.length < 3) {
+            for (let i = this.coords.length; i < 3; i++) {
+                this.coords[i] = 0;
+            }
+        }
+    }
+
+    dotProduct(v) {
+        return (this.coords[0] * v.coords[0]) + (this.coords[1] * v.coords[1]) + (this.coords[2] * v.coords[2]);
+    }
+
+    crossProduct(v) {
+        return new PosVector([this.coords[1] * v.coords[2] - this.coords[2] * v.coords[1], -this.coords[0] * v.coords[2] + this.coords[2] * v.coords[0], this.coords[0] * v.coords[1] - this.coords[1] * v.coords[0]]);
+    }
+}
+
 function sin(x) {
     if (mathPlus.settings.degrees === true) {
         return Math.sin(mathPlus.toRadians(x));
