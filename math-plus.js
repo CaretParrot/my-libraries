@@ -223,7 +223,7 @@ class Vector {
     }
 
     getPosVector() {
-        return new PosVector([0, 0, 0], [this.coords[1][0] - this.coords[0][0], this.coords[1][1] - this.coords[0][1], this.coords[1][2] - this.coords[0][2]]);
+        return new PosVector([this.coords[1][0] - this.coords[0][0], this.coords[1][1] - this.coords[0][1], this.coords[1][2] - this.coords[0][2]]);
     }
 
     getUnitVector() {
@@ -267,6 +267,10 @@ class PosVector extends Vector {
 
     crossProduct(v) {
         return new PosVector([this.coords[1] * v.coords[2] - this.coords[2] * v.coords[1], -this.coords[0] * v.coords[2] + this.coords[2] * v.coords[0], this.coords[0] * v.coords[1] - this.coords[1] * v.coords[0]]);
+    }
+
+    getVector() {
+        return new Vector([0, 0, 0], this.coords);
     }
 }
 
