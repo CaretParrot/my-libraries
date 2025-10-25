@@ -209,6 +209,11 @@ class Vector {
         }
     }
 
+    setCoords(tail = [0, 0, 0], tip = [0, 0, 0]) {
+        this.coords = [tail, tip];
+        this.update();
+    }
+
     getCoords() {
         return this.coords;
     }
