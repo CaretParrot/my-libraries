@@ -240,15 +240,6 @@ class Vector {
     slope() {
         return (this.coords[1][1] - this.coords[0][1]) / (this.coords[1][0] - this.coords[0][0]);
     }
-
-    angle() {
-        if (mathPlus.settings.degrees) {
-            return mathPlus.toDegrees(Math.atan(this.slope()));
-        } else {
-            return Math.atan(this.slope());
-        }
-        
-    }
 }
 
 class PosVector extends Vector {
