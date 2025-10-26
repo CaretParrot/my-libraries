@@ -3,13 +3,12 @@
 :root {
     color-scheme: light dark;
     --hue-degree: 240;
-    --chroma: 15%;
-    --light-1: oklch(70% var(--chroma) var(--hue-degree));
-    --light-2: oklch(80% var(--chroma) var(--hue-degree));
-    --light-accent: oklch(80% var(--chroma) calc(var(--hue-degree) + 30));
-    --dark-1: oklch(20% var(--chroma) var(--hue-degree));
-    --dark-2: oklch(30% var(--chroma) var(--hue-degree));
-    --dark-accent: oklch(30% var(--chroma) calc(var(--hue-degree) + 30));
+    --light-1: hsl(var(--hue-degree), 80%, 90%);
+    --light-2: hsl(var(--hue-degree), 90%, 95%);
+    --light-accent: hsl(calc(var(--hue-degree) + 30), 90%, 95%);
+    --dark-1: hsl(var(--hue-degree), 5%, 10%);
+    --dark-2: hsl(var(--hue-degree), 10%, 20%);
+    --dark-accent: hsl(calc(var(--hue-degree) + 30), 10%, 20%);
     --base-unit: 1rem;
 }
 
