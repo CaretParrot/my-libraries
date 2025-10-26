@@ -3,16 +3,13 @@
 :root {
     color-scheme: light dark;
     --hue-degree: 240;
-    --dark-1: hsl(var(--hue-degree), 5%, 10%);
-    --dark-2: hsl(var(--hue-degree), 10%, 20%);
-    --dark-3: hsl(var(--hue-degree), 15%, 30%);
-    --dark-accent: hsl(calc(var(--hue-degree) + 30), 10%, 20%);
-    --light-1: hsl(var(--hue-degree), 70%, 85%);
-    --light-2: hsl(var(--hue-degree), 80%, 90%);
-    --light-3: hsl(var(--hue-degree), 90%, 95%);
-    --light-accent: hsl(calc(var(--hue-degree) + 30), 80%, 90%);
-    --dark-placeholder: hsl(var(--hue-degree), 10%, 20%, 0.5);
-    --light-placeholder: hsl(var(--hue-degree), 80%, 90%, 0.5);
+    --chroma: 15%;
+    --light-1: oklch(70% var(--chroma) var(--hue-degree));
+    --light-2: oklch(80% var(--chroma) var(--hue-degree));
+    --light-accent: oklch(80% var(--chroma) calc(var(--hue-degree) + 30));
+    --dark-1: oklch(20% var(--chroma) var(--hue-degree));
+    --dark-2: oklch(30% var(--chroma) var(--hue-degree));
+    --dark-accent: oklch(30% var(--chroma) calc(var(--hue-degree) + 30));
     --base-unit: 1rem;
 }
 
@@ -20,7 +17,7 @@
 button:active,
 select:active,
 input:focus {
-    background-color: light-dark(var(--light-3), var(--dark-3));
+    background-color: transparent;
 }
 
 body * {
