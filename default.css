@@ -3,12 +3,12 @@
 :root {
     color-scheme: light dark;
     --hue-degree: 240;
-    --light-1: hsl(var(--hue-degree), 80%, 90%);
-    --light-2: hsl(var(--hue-degree), 90%, 95%);
-    --light-accent: hsl(calc(var(--hue-degree) + 30), 90%, 95%);
-    --dark-1: hsl(var(--hue-degree), 5%, 10%);
-    --dark-2: hsl(var(--hue-degree), 10%, 20%);
-    --dark-accent: hsl(calc(var(--hue-degree) + 30), 10%, 20%);
+    --background: light-dark(hsl(var(--hue-degree), 80%, 90%), hsl(var(--hue-degree), 5%, 10%));
+    --element: light-dark(hsl(var(--hue-degree), 90%, 95%), hsl(var(--hue-degree), 10%, 20%));
+    --accent: light-dark(hsl(calc(var(--hue-degree) + 30), 90%, 95%), hsl(calc(var(--hue-degree) + 30), 10%, 20%));
+    --text: light-dark(hsl(var(--hue-degree), 10%, 20%), hsl(var(--hue-degree), 90%, 95%));
+    --placeholder: light-dark(hsl(var(--hue-degree), 10%, 20%, 50%), hsl(var(--hue-degree), 90%, 95%, 50%));
+    --text-accent: light-dark(hsl(calc(var(--hue-degree) + 30), 10%, 20%), hsl(calc(var(--hue-degree) + 30), 90%, 95%));
     --base-unit: 1rem;
 }
 
@@ -20,8 +20,8 @@ input:focus {
 }
 
 body * {
-    color: light-dark(var(--dark-2), var(--light-2));
-    background-color: light-dark(var(--light-2), var(--dark-2));
+    color: var(--text);
+    background-color: var(--element);
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -52,17 +52,17 @@ body * {
 }
 
 ::selection {
-    color: light-dark(var(--light-2), var(--dark-2));
-    background-color: light-dark(var(--dark-2), var(--light-2));
+    color: var(--element);
+    background-color: var(--text);
 }
 
 ::-moz-selection {
-    color: light-dark(var(--light-2), var(--dark-2));
-    background-color: light-dark(var(--dark-2), var(--light-2));
+    color: var(--element);
+    background-color: var(--text);
 }
 
 ::placeholder {
-    color: light-dark(var(--dark-placeholder), var(--light-placeholder));
+    color: var(--placeholder);
 }
 
 html {
@@ -75,7 +75,7 @@ html {
 }
 
 body {
-    background-color: light-dark(var(--light-1), var(--dark-1));
+    background-color: var(--background);
     margin: 0;
     padding: var(--base-unit);
     width: 100%;
@@ -127,7 +127,8 @@ div {
 input,
 select,
 button {
-    background-color: light-dark(var(--light-accent), var(--dark-accent));
+    color: var(--text-accent);
+    background-color: var(--accent);
 }
 
 .two-column {
