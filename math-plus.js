@@ -56,21 +56,17 @@ let mathPlus = {
     },
     convertToFraction: function (number) {
         for (let i = 1; i < 1000000; i++) {
-            if ((parseFloat(number) * i) % 1 === 0) {
-                return parseFloat(number) * i + "/" + i;
+            if (number * i % 1 === 0) {
+                return number * i + "/" + i;
             } else {
-                console.warn(
-                    "Fraction is too large to compute. The decimal was returned."
-                );
+                console.warn("Fraction is too large to compute. The decimal was returned.");
                 return number;
             }
         }
     },
     simpRadic: function (radicalSquared) {
         if (radicalSquared === 1) {
-            console.warn(
-                "Given radical has only one square factor: 1. The radical is already simplified. The given number was returned."
-            );
+            console.warn("Given radical has only one square factor: 1. The radical is already simplified. The given number was returned");
             return radicalSquared;
         }
 
@@ -92,19 +88,14 @@ let mathPlus = {
             return "√" + radicalSquared;
         }
 
-        let factorToUse = Math.sqrt(Math.max.apply(null, squareFactors));
-        return (
-            factorToUse + "√" + radicalSquared / Math.max.apply(null, squareFactors)
-        );
+        return Math.max.apply(null, squareFactors) + "√" + radicalSquared / Math.max.apply(null, squareFactors);
     },
     hypotenuse: function (number1, number2) {
         return Math.sqrt(number1 ** 2 + number2 ** 2);
     },
     factorial: function (number) {
         if (number > 170) {
-            console.warn(
-                'Factorial is too large to compute. Factorial of the given number returned "Infinity".'
-            );
+            console.warn(`Factorial is too large to compute. Factorial of the given number returned "Infinity".`);
         }
         let total = 1;
         for (let i = 1; i <= number; i++) {
@@ -124,67 +115,73 @@ let mathPlus = {
     },
     toRadians: function (number) {
         return number * Math.PI / 180;
-    },
-    MathFunction: function (expression, variable) {
-        this.expression = expression;
-        this.variable = variable;
-        this.evaluate = function (inputVal, rounded = true) {
-            if (rounded) {
-                return mathPlus.roundToPlaces(Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)());
-            } else {
-                return Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)();
-            }
-        }
-        this.derivative = function (inputVal) {
-            return mathPlus.roundToPlaces((this.evaluate(inputVal + mathPlus.settings.dx, false) - this.evaluate(inputVal, false)) / mathPlus.settings.dx);
-        }
-        this.integral = function (lowerBound, upperBound) {
-            let sum = 0;
-            if (lowerBound < upperBound) {
-                for (i = lowerBound; i <= upperBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
-                    sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
-                }
+    }
+}
 
-                return mathPlus.roundToPlaces(sum);
-            } else if (lowerBound > upperBound) {
-                for (i = upperBound; i <= lowerBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
-                    sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
-                }
+function MathFunction(expression, variable) {
+    this.expression = expression;
+    this.variable = variable;
 
-                return -mathPlus.roundToPlaces(sum);
-            } else {
-                return 0;
-            }
+    this.evaluate = function (inputVal, rounded = true) {
+        if (rounded) {
+            return mathPlus.roundToPlaces(Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)());
+        } else {
+            return Function(`return ${expression.replace(new RegExp(variable, "g"), inputVal)};`)();
         }
-        this.summation = function (lowerBound, upperBound) {
-            let sum = 0;
-            if (lowerBound >= upperBound) {
-                console.error("Upper bound must be greater than lower bound.");
-                return 0;
-            } else if (lowerBound % 1 !== 0 || upperBound % 1 !== 0) {
-                console.error("Summation bounds must be integers.");
-                return 0;
-            } else {
-                for (let i = lowerBound; i <= upperBound; i++) {
-                    sum += Function(`return ${expression.replace(new RegExp(variable, "g"), i)};`)();
-                }
-                return mathPlus.roundToPlaces(sum);
+    }
+
+    this.derivative = function (inputVal) {
+        return mathPlus.roundToPlaces((this.evaluate(inputVal + mathPlus.settings.dx, false) - this.evaluate(inputVal, false)) / mathPlus.settings.dx);
+    }
+
+    this.integral = function (lowerBound, upperBound) {
+        let sum = 0;
+        if (lowerBound < upperBound) {
+            for (i = lowerBound; i <= upperBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
+                sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
             }
+
+            return mathPlus.roundToPlaces(sum);
+        } else if (lowerBound > upperBound) {
+            for (i = upperBound; i <= lowerBound - mathPlus.settings.dx; i += mathPlus.settings.dx) {
+                sum += (1 / 2) * (this.evaluate(i) + this.evaluate(i + mathPlus.settings.dx)) * (mathPlus.settings.dx);
+            }
+
+            return -mathPlus.roundToPlaces(sum);
+        } else {
+            return 0;
         }
-        this.product = function (lowerBound, upperBound) {
-            let product = 1;
-            if (lowerBound >= upperBound) {
-                console.error("Upper bound must be greater than lower bound.");
-                return 0;
-            } else if (lowerBound % 1 !== 0 || upperBound % 1 !== 0) {
-                console.error("Summation bounds must be integers.");
-                return 0;
-            } else {
-                for (let i = lowerBound; i <= upperBound; i++) {
-                    product *= Function(`return ${expression.replace(new RegExp(variable, "g"), i)};`)();
-                }
-                return mathPlus.roundToPlaces(product);
+    }
+
+    this.summation = function (lowerBound, upperBound) {
+        let sum = 0;
+        if (lowerBound >= upperBound) {
+            console.error("Upper bound must be greater than lower bound.");
+            return 0;
+        } else if (lowerBound % 1 !== 0 || upperBound % 1 !== 0) {
+            console.error("Summation bounds must be integers.");
+            return 0;
+        } else {
+            for (let i = lowerBound; i <= upperBound; i++) {
+                sum += Function(`return ${expression.replace(new RegExp(variable, "g"), i)};`)();
             }
+            return mathPlus.roundToPlaces(sum);
+        }
+    }
+
+    this.product = function (lowerBound, upperBound) {
+        let product = 1;
+        if (lowerBound >= upperBound) {
+            console.error("Upper bound must be greater than lower bound.");
+            return 0;
+        } else if (lowerBound % 1 !== 0 || upperBound % 1 !== 0) {
+            console.error("Summation bounds must be integers.");
+            return 0;
+        } else {
+            for (let i = lowerBound; i <= upperBound; i++) {
+                product *= Function(`return ${expression.replace(new RegExp(variable, "g"), i)};`)();
+            }
+            return mathPlus.roundToPlaces(product);
         }
     }
 }
@@ -252,14 +249,6 @@ class PosVector extends Vector {
         super();
         this.coords = tip;
         this.update();
-    }
-
-    getPosVector() {
-        return this;
-    }
-
-    isPosVector() {
-        return true;
     }
 
     update() {
