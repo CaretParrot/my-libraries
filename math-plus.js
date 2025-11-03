@@ -1,3 +1,5 @@
+"use strict";
+
 let mathPlus = {
     settings: {
         rounding: 5,
