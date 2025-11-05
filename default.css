@@ -2,13 +2,13 @@
 
 :root {
     color-scheme: light dark;
-    --hue-degree: 270;
-    --background: light-dark(oklch(70% 10% var(--hue-degree)), oklch(15% 10% var(--hue-degree)));
-    --element: light-dark(oklch(85% 10% var(--hue-degree)), oklch(30% 10% var(--hue-degree)));
-    --accent: light-dark(oklch(85% 10% calc(var(--hue-degree) + 30)), oklch(30% 10% calc(var(--hue-degree) + 30)));
-    --text: light-dark(oklch(30% 10% var(--hue-degree)), oklch(85% 10% var(--hue-degree)));
-    --placeholder: light-dark(oklch(30% 10% var(--hue-degree) 50%), oklch(85% 10% var(--hue-degree) 50%));
-    --text-accent: light-dark(oklch(30% 10% calc(var(--hue-degree) + 30)), oklch(85% 10% calc(var(--hue-degree) + 30)));
+    --hue-degree: 240;
+    --background: light-dark(hsl(var(--hue-degree), 80%, 90%), hsl(var(--hue-degree), 5%, 10%));
+    --element: light-dark(hsl(var(--hue-degree), 90%, 95%), hsl(var(--hue-degree), 10%, 20%));
+    --accent: light-dark(hsl(calc(var(--hue-degree) + 30), 90%, 95%), hsl(calc(var(--hue-degree) + 30), 10%, 20%));
+    --text: light-dark(hsl(var(--hue-degree), 10%, 20%), hsl(var(--hue-degree), 90%, 95%));
+    --placeholder: light-dark(hsl(var(--hue-degree), 10%, 20%, 50%), hsl(var(--hue-degree), 90%, 95%, 50%));
+    --text-accent: light-dark(hsl(calc(var(--hue-degree) + 30), 10%, 20%), hsl(calc(var(--hue-degree) + 30), 90%, 95%));
     --base-unit: 1rem;
 }
 
