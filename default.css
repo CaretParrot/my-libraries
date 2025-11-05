@@ -2,7 +2,7 @@
 
 :root {
     color-scheme: light dark;
-    --hue-degree: 240;
+    --hue-degree: 270;
     --background: light-dark(oklch(70% 10% var(--hue-degree)), oklch(15% 10% var(--hue-degree)));
     --element: light-dark(oklch(85% 10% var(--hue-degree)), oklch(30% 10% var(--hue-degree)));
     --accent: light-dark(oklch(85% 10% calc(var(--hue-degree) + 30)), oklch(30% 10% calc(var(--hue-degree) + 30)));
