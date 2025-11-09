@@ -13,11 +13,13 @@
 
     <body>
         <script>
+            let newFunction = new MathFunction("y = (x)**2", "x");
             let graph = new Graph(document.body);
-            let vector = new Vector([0, 0], [100, 100]);
             graph.width = 500;
             graph.height = 500;
-            graph.graphVector(vector);
+
+            let vectorList = [new Vector([0, 0], [200, 200])];
+            graph.graphVectors(vectorList);
         </script>
     </body>
 
