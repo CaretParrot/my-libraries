@@ -151,8 +151,7 @@ button {
     display: grid;
 }
 
-@media (hover: none) {
-
+@media (orientation: portrait) {
     .two-column,
     .three-column,
     .four-column {

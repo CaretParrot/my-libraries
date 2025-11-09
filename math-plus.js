@@ -273,3 +273,45 @@ class PosVector extends Vector {
         return new Vector([0, 0, 0], this.coords);
     }
 }
+
+class Graph {
+    constructor(parentElement) {
+        this.element = document.createElement("canvas");
+        this.element.style.transform = "scaleY(-1)";
+        this.element.style.padding = 0;
+        this.ctx = this.element.getContext("2d");
+        this.strokeColor = "white";
+        this.ctx.strokeStyle = this.strokeColor;
+        parentElement.appendChild(this.element);
+    }
+
+    get width() {
+        return this.element.width;
+    }
+    
+    set width(width) {
+        this.element.width = width;
+    }
+
+    get height() {
+        return this.element.height;
+    }
+
+    set height(height) {
+        this.element.height = height;
+    }
+
+    graphVector(vector) {
+        if (vector instanceof Vector) {
+            this.ctx.strokeStyle = this.strokeColor;
+            this.ctx.beginPath();
+            this.ctx.moveTo(vector.getCoords()[0][0], vector.getCoords()[0][1]);
+            this.ctx.lineTo(vector.getCoords()[1][0], vector.getCoords()[1][1]);
+            this.ctx.stroke();
+        }
+    }
+
+    clear() {
+        graph.clearRect(0, 0, this.width, this.height);
+    }
+}

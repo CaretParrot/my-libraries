@@ -12,19 +12,12 @@
     </head>
 
     <body>
-        <h1 class="accent">My Libraries</h1>
-        <p id="test">Hi there!</p>
-        <button id="button">Hmmm...</button>
-        <input placeholder="Type here..." type="number">
-        <div class="four-column">
-            <p>Here</p>
-            <p>Is</p>
-            <p>A</p>
-            <p>Grid</p>
-            <p>of</p>
-            <p>Items</p>
-        </div>
         <script>
+            let graph = new Graph(document.body);
+            let vector = new Vector([0, 0], [100, 100]);
+            graph.width = 500;
+            graph.height = 500;
+            graph.graphVector(vector);
         </script>
     </body>
 
