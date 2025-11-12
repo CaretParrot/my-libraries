@@ -2,7 +2,7 @@
 
 // @ts-check
 
-let mathPlus = {
+const mathPlus = {
     /**
      * Creates settings for rounding and the dx value for discrete calculus.
      */
@@ -12,9 +12,10 @@ let mathPlus = {
     },
     /**
      * 
-     * @param {number} value 
+     * @param {number} value
      * @param {number} power 
      * @returns {number}
+     *
      */
     xroot: function (value, power) {
         return Math.pow(value, 1 / power);
@@ -43,6 +44,20 @@ let mathPlus = {
         } else {
             return Math.floor(array[(array.length - 1) / 2]);
         }
+    },
+    /**
+     * 
+     * @param {number} number 
+     * @returns {boolean}
+     */
+    isSquare: function (number) {
+        for (let i = 0; i < number; i++) {
+            if (number / i == i) {
+                return true;
+            }
+        }
+
+        return false;
     },
     /**
      * 
@@ -78,14 +93,14 @@ let mathPlus = {
      * @returns {string}
      */
     convertToFraction: function (number) {
-        for (let i = 1; i < 1000000; i++) {
+        for (let i = 1; i < Number.MAX_SAFE_INTEGER; i++) {
             if (number * i % 1 === 0) {
                 return number * i + "/" + i;
-            } else {
-                console.warn("Fraction is too large to compute. The decimal was returned.");
-                return number;
             }
         }
+
+        console.warn("Fraction is too large to compute. The decimal was returned.");
+        return number.toString();
     },
     /**
      * 
@@ -95,17 +110,19 @@ let mathPlus = {
     simpRadic: function (radicalSquared) {
         if (radicalSquared === 1) {
             console.warn("Given radical has only one square factor: 1. The radical is already simplified. The given number was returned");
-            return radicalSquared;
+            return radicalSquared.toString();
         }
 
-        if (isSquare(radicalSquared)) {
-            return Math.sqrt(radicalSquared);
+        for (let i = 0; i < radicalSquared; i++) {
+            if (radicalSquared / i == i) {
+                return radicalSquared.toString();
+            }
         }
 
         let squareFactors = [];
-        for (let i = 0; i < factors(radicalSquared).length; i++) {
-            if (isSquare(factors(radicalSquared)[i])) {
-                squareFactors.push(factors(radicalSquared)[i]);
+        for (let i = 0; i < this.factors(radicalSquared).length; i++) {
+            if (this.isSquare(this.factors(radicalSquared)[i])) {
+                squareFactors.push(this.factors(radicalSquared)[i]);
             }
         }
 
@@ -190,7 +207,7 @@ class MathFunction {
      * @returns {number}
      */
     evaluate(inputVal) {
-        return mathPlus.roundToPlaces(Function(`return ${this.expression.replace(new RegExp(this.variable, "g"), inputVal)};`)());
+        return mathPlus.roundToPlaces(Function(`return ${this.expression.replace(new RegExp(this.variable, "g"), inputVal.toString())};`)());
     }
 
     /**
@@ -199,14 +216,14 @@ class MathFunction {
      * @returns {number}
      */
     derivative(inputVal) {
-        return mathPlus.roundToPlaces((this.evaluate(inputVal + mathPlus.settings.dx, false) - this.evaluate(inputVal, false)) / mathPlus.settings.dx);
+        return mathPlus.roundToPlaces((this.evaluate(inputVal + mathPlus.settings.dx) - this.evaluate(inputVal)) / mathPlus.settings.dx);
     }
 
     /**
      * 
      * @param {number} lowerBound 
      * @param {number} upperBound 
-     * @returns {number}
+     * @returns {Promise<number>}
      */
     async integral(lowerBound, upperBound) {
         let sum = 0;
@@ -231,7 +248,7 @@ class MathFunction {
      * 
      * @param {number} lowerBound 
      * @param {number} upperBound 
-     * @returns {number}
+     * @returns {Promise<number>}
      */
     async summation(lowerBound, upperBound) {
         let sum = 0;
@@ -243,7 +260,7 @@ class MathFunction {
             return 0;
         } else {
             for (let i = lowerBound; i <= upperBound; i++) {
-                sum += Function(`return ${expression.replace(new RegExp(variable, "g"), i)};`)();
+                sum += Function(`return ${this.expression.replace(new RegExp(this.variable, "g"), i.toString())};`)();
             }
             return mathPlus.roundToPlaces(sum);
         }
@@ -253,7 +270,7 @@ class MathFunction {
      * 
      * @param {number} lowerBound 
      * @param {number} upperBound 
-     * @returns {number}
+     * @returns {Promise<number>}
      */
     async product(lowerBound, upperBound) {
         let product = 1;
@@ -265,7 +282,7 @@ class MathFunction {
             return 0;
         } else {
             for (let i = lowerBound; i <= upperBound; i++) {
-                product *= Function(`return ${expression.replace(new RegExp(variable, "g"), i)};`)();
+                product *= Function(`return ${this.expression.replace(new RegExp(this.variable, "g"), i.toString())};`)();
             }
             return mathPlus.roundToPlaces(product);
         }
@@ -273,8 +290,8 @@ class MathFunction {
 }
 
 class Vector {
-    constructor(tail = [0, 0, 0], tip = [0, 0, 0]) {
-        this.coords = [tail, tip];
+    constructor(coords = [[0, 0, 0], [0, 0, 0]]) {
+        this.coords = [coords[0], coords[1]];
         this.update();
     }
 
@@ -292,8 +309,8 @@ class Vector {
         }
     }
 
-    setCoords(tail = [0, 0, 0], tip = [0, 0, 0]) {
-        this.coords = [tail, tip];
+    setCoords(coords = [[0, 0, 0], [0, 0, 0]]) {
+        this.coords = [coords[0], coords[1]];
         this.update();
     }
 
@@ -306,7 +323,7 @@ class Vector {
     }
 
     getPosVector() {
-        return new PosVector([this.coords[1][0] - this.coords[0][0], this.coords[1][1] - this.coords[0][1], this.coords[1][2] - this.coords[0][2]]);
+        return new Vector([[0, 0, 0], [this.coords[1][0] - this.coords[0][0], this.coords[1][1] - this.coords[0][1], this.coords[1][2] - this.coords[0][2]]]);
     }
 
     getUnitVector() {
@@ -314,7 +331,7 @@ class Vector {
         let magnitude = tempVector.getMagnitude();
 
         for (let i = 0; i < tempVector.getCoords()[1].length; i++) {
-            tempVector.coords[1][i] /= magnitude;
+            tempVector.getCoords()[1][i] /= magnitude;
         }
 
         return tempVector;
@@ -328,42 +345,24 @@ class Vector {
         return Math.atan(this.slope());
     }
 }
-
-class PosVector extends Vector {
-    constructor(tip = [0, 0, 0]) {
-        super();
-        this.coords = tip;
-        this.update();
-    }
-
-    update() {
-        if (this.coords.length < 3) {
-            for (let i = this.coords.length; i < 3; i++) {
-                this.coords[i] = 0;
-            }
-        }
-    }
-
-    dotProduct(v) {
-        return (this.coords[0] * v.coords[0]) + (this.coords[1] * v.coords[1]) + (this.coords[2] * v.coords[2]);
-    }
-
-    crossProduct(v) {
-        return new PosVector([this.coords[1] * v.coords[2] - this.coords[2] * v.coords[1], -this.coords[0] * v.coords[2] + this.coords[2] * v.coords[0], this.coords[0] * v.coords[1] - this.coords[1] * v.coords[0]]);
-    }
-
-    getVector() {
-        return new Vector([0, 0, 0], this.coords);
-    }
-}
 class Graph {
+    /**
+     * 
+     * @param {Element} parentElement 
+     * @returns 
+     */
     constructor(parentElement) {
         this.element = document.createElement("canvas");
         this.element.style.transform = "scaleY(-1)";
-        this.element.style.padding = 0;
+        this.element.style.padding = "0";
         this.ctx = this.element.getContext("2d");
-        this.strokeColor = "white";
-        this.ctx.strokeStyle = this.strokeColor;
+
+        if (this.ctx == null) {
+            console.error("Failed creation of canvas.");
+            return;
+        }
+
+        this.ctx.strokeStyle = "white";
         parentElement.appendChild(this.element);
     }
 
@@ -388,14 +387,12 @@ class Graph {
      * @param {Vector[]} vectorList 
      */
     graphVectors(vectorList) {
+        if (this.ctx == null) {
+            console.error("Failed creation of canvas.");
+            return;
+        }
+
         for (let i = 0; i < vectorList.length; i++) {
-            if (vectorList[i] instanceof PosVector) {
-                vectorList[i] = vectorList[i].getVector();
-
-            }
-
-            this.ctx.strokeStyle = this.strokeColor;
-
             this.ctx.beginPath();
             this.ctx.moveTo(vectorList[i].getCoords()[0][0], vectorList[i].getCoords()[0][1]);
             this.ctx.lineTo(vectorList[i].getCoords()[1][0], vectorList[i].getCoords()[1][1]);
@@ -405,6 +402,11 @@ class Graph {
     }
 
     clear() {
-        graph.clearRect(0, 0, this.width, this.height);
+        if (this.ctx == null) {
+            console.error("Failed creation of canvas.");
+            return;
+        }
+
+        this.ctx.clearRect(0, 0, this.width, this.height);
     }
 }
